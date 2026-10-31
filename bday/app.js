@@ -265,15 +265,13 @@
 
   function home() {
     playSong(C.homeSong);
-    const startLabel = unlocked > 0 ? `Wahi se continue karo 🕊️` : `Udaan shuru karo 🕊️`;
     app.innerHTML = `
       <section class="screen home">
         <p class="kicker">🎂 HAPPY BIRTHDAY 🎂</p>
         <h1>Chotuuuuu<br><span>ka bday 🎂</span></h1>
         <div class="measure">${figureSVG()}</div>
-        <p class="sub">Ye hai official height chart 📏 Pigeon ke saath level-by-level udo aur dekho 5'1" tak pahunch paati ho ya nahi 😂</p>
-        <button class="btn big" id="start">${startLabel}</button>
         <p class="map-title">📏 height chart</p>
+        ${unlocked === 0 ? `<p class="map-hint">click on 1' 👇</p>` : ""}
         <ol class="map">
           ${S.map((s, i) => `
             <li class="${i > unlocked ? "locked" : ""} ${i === unlocked ? "current" : ""}">
@@ -282,8 +280,10 @@
               </button>
             </li>`).join("")}
         </ol>
+        ${unlocked > 0 ? `<button class="btn big" id="start">Wahi se continue karo 🕊️</button>` : ""}
       </section>`;
-    $("#start").addEventListener("click", () => fly(unlocked));
+    const start = $("#start");
+    if (start) start.addEventListener("click", () => fly(unlocked));
     $$(".map button", app).forEach((b) => b.addEventListener("click", () => fly(+b.dataset.i)));
     const fig = $(".fig", app);
     fig.addEventListener("click", () => { fig.classList.remove("boing"); void fig.getBoundingClientRect(); fig.classList.add("boing"); });

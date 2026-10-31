@@ -129,7 +129,8 @@ p { font-size: 18px; line-height: 1.5; margin: 0 0 12px; }
 .map li em { font-style: normal; font-size: 22px; text-align: center; }
 .map li.locked button { opacity: .55; cursor: not-allowed; }
 .map li.current button { outline: 3px solid var(--pink); }
-.map-title { text-align: center; font-weight: 800; margin: 26px 0 -8px; color: var(--ink-soft); }
+.map-hint { text-align: center; font-weight: 800; font-size: 20px; color: var(--pink-deep); margin: 12px 0 -8px; animation: bob 1.6s ease-in-out infinite; }
+.map-title { text-align: center; font-weight: 800; font-size: 24px; margin: 18px 0 -8px; color: var(--ink); }
 
 /* ---------- stage ---------- */
 .stage-head { display: flex; align-items: center; gap: 8px; margin: 2px 60px 6px 0; }
