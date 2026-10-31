@@ -128,7 +128,7 @@ window.BDAY = {
         "or just for being here on earth, ur presence means a lot 💗",
         "hope u always stay happy",
       ],
-      question: { q: "Ek cheez batao jiske liye tum mujhe thank you bolna chahogi 😛", a: "" },
+      question: { q: "kitni baar sorry bolu main? 🥺", a: "" },
     },
 
     {
