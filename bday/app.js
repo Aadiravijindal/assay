@@ -67,8 +67,8 @@
   const SIZES = { forehead: [130, 175], tiny: [90, 120], tummy: [90, 125], pimples: [85, 115], browless: [90, 120], feet: [85, 110], hands: [85, 110] };
   function emojiBackground() {
     const bg = document.getElementById("emoji-bg");
-    const order = ["forehead", "tiny", "pimples", "tummy", "browless", "feet", "hands", "forehead", "pimples", "browless", "tummy", "tiny", "feet", "hands"];
-    const n = window.innerWidth < 600 ? 10 : 14;
+    const order = ["forehead", "tiny", "tummy", "browless", "feet", "hands", "forehead", "browless", "tummy", "tiny", "feet", "hands"];
+    const n = window.innerWidth < 600 ? 10 : 12;
     for (let i = 0; i < n; i++) {
       const k = order[i];
       const s = document.createElement("span");
@@ -317,8 +317,10 @@
     ten(s) {
       return `${polaroid(s.photo, s.caption || "ye wali 💗")}
         <div class="card story">${paras(s.text)}</div>
-        <div class="ten">${s.items.map((t, i) => `
-          <button class="flip"><div class="inner"><span class="front">#${i + 1}<small>tap 💌</small></span><span class="back">${esc(t)}</span></div></button>`).join("")}
+        <div class="ten">${s.items.map((it, i) => {
+          const t = typeof it === "string" ? "" : it.t, d = typeof it === "string" ? it : it.d;
+          return `<button class="flip"><span class="front"><b>#${i + 1}</b><span class="ttl">${t ? esc(t) : "💌"}</span><small>tap karo 💌</small></span><span class="back">${esc(d)}</span></button>`;
+        }).join("")}
         </div>
         <p class="progress">0 / ${s.items.length} khule</p>`;
     },

@@ -157,17 +157,19 @@ p { font-size: 18px; line-height: 1.5; margin: 0 0 12px; }
 .story p { font-size: 19px; }
 
 /* 10 things */
-.ten { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
-.flip { perspective: 800px; border: 0; background: none; padding: 0; min-height: 120px; }
-.flip .inner { position: relative; width: 100%; height: 100%; min-height: 120px; transition: transform .6s; transform-style: preserve-3d; }
-.flip.open .inner { transform: rotateY(180deg); }
-.flip .front, .flip .back {
-  position: absolute; inset: 0; border-radius: 18px; backface-visibility: hidden; -webkit-backface-visibility: hidden;
-  display: flex; align-items: center; justify-content: center; text-align: center; padding: 10px; box-shadow: var(--shadow);
+.ten { display: flex; flex-direction: column; gap: 10px; }
+.flip { display: block; width: 100%; border: 0; padding: 0; text-align: left; background: #fff; border-radius: 20px; box-shadow: var(--shadow); overflow: hidden; }
+.flip .front {
+  display: flex; align-items: center; gap: 12px; padding: 14px 16px;
+  background: linear-gradient(135deg, var(--pink), var(--lav)); color: #fff;
 }
-.flip .front { background: linear-gradient(135deg, var(--pink), var(--lav)); color: #fff; font-weight: 800; font-size: 22px; flex-direction: column; }
-.flip .front small { font-size: 14px; opacity: .85; font-weight: 700; }
-.flip .back { background: #fff; transform: rotateY(180deg); font-size: 15.5px; line-height: 1.3; font-weight: 600; }
+.flip .front b { font-size: 22px; font-weight: 800; min-width: 38px; }
+.flip .front .ttl { flex: 1; font-weight: 800; font-size: 18px; line-height: 1.2; }
+.flip .front small { font-size: 13px; font-weight: 700; opacity: .9; white-space: nowrap; }
+.flip:not(.open) .front .ttl { filter: blur(5px); }
+.flip.open .front small { display: none; }
+.flip .back { display: none; padding: 14px 18px 16px; font-size: 17px; line-height: 1.5; font-weight: 500; }
+.flip.open .back { display: block; animation: pop .45s cubic-bezier(.2, 1.4, .4, 1); }
 .progress { text-align: center; font-weight: 800; color: var(--pink-deep); margin-top: 10px; }
 
 /* basketball */
