@@ -273,7 +273,7 @@
         <div class="measure">${figureSVG()}</div>
         <p class="sub">Ye hai official height chart 📏 Pigeon ke saath level-by-level udo aur dekho 5'1" tak pahunch paati ho ya nahi 😂</p>
         <button class="btn big" id="start">${startLabel}</button>
-        <p class="map-title">⬆️ height chart ⬆️</p>
+        <p class="map-title">📏 height chart</p>
         <ol class="map">
           ${S.map((s, i) => `
             <li class="${i > unlocked ? "locked" : ""} ${i === unlocked ? "current" : ""}">

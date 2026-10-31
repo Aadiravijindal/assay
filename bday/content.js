@@ -68,7 +68,7 @@ window.BDAY = {
     },
 
     {
-      height: "4'5\"",
+      height: "3'",
       title: "Basketball 🏀",
       subtitle: "shortyyy, admit I was ur teacher 😏",
       type: "basketball",
@@ -92,7 +92,7 @@ window.BDAY = {
     },
 
     {
-      height: "4'9\"",
+      height: "4'",
       title: "Leena ma'am tuition 📚",
       subtitle: "4'9\" — ur REAL height 🤭",
       type: "story",
@@ -114,7 +114,7 @@ window.BDAY = {
     },
 
     {
-      height: "5'0\"",
+      height: "4'5\"",
       title: "Thank you for everything 🙏",
       type: "letter",
       song: "",
