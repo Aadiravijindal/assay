@@ -93,19 +93,24 @@ window.BDAY = {
 
     {
       height: "4'9\"",
-      title: "Tuition aur uske baad 📚",
-      subtitle: "4'9\" — tumhari ASLI height 🤭 (jhooth mat bolna, chart jhooth nahi bolta)",
+      title: "Leena ma'am tuition 📚",
+      subtitle: "4'9\" — ur REAL height 🤭",
       type: "story",
       song: "",
       songName: "",
-      photo: "",
-      caption: "padhai kam, baatein zyada",
+      photo: "img/doublechin.jpg",
+      caption: "i love this double chin hahahahah",
       text: [
-        "Tuition wale din… padhai kitni hui pata nahi, par baatein bahut hui 😌",
-        "Aur uske baad wala time — wahi time jab sab kuch thoda zyada special lagne laga.",
-        "Waise official record ke liye: tum 4'9\" ho. 5'1\" sirf tumhare dimaag mein hai 😂",
+        "okay idk how much I studied in Leena ma'am's tuition but yeahhhh, we did a lot of shit hhahahahahahh",
+        "like all those clothes coincidences, and Holi and shit like happened there… even bhanda bhi wahi phata 😭 like idk who told but yeahhhh, someone did fk it up",
+        "like I still remember bro, bc woh chocolate aur note dete waqt kitni phatiiii 😂 and somehow Leena ma'am got to know about that, ghar pahuncha aur udhar jaake waat lagiii hahahah",
+        "bro ik kitni baar main fasa and hum fase hain, but now when I think about it I miss those days, and now I find it something I will remember for all my life as a good memory 💗",
+        "bro do u remember denim? like all denim and same somehowwwww, like wtffff 👖👖",
+        "also like when we used to come early for tuition class hahahahah 👀",
+        "but yeahhhhh, ur feet never touched the ground while sitting on the chairrrr hahahahahahha 🪑🦶",
+        "also I remember the chem exammm, tho I don't wanna say but someone said they did all hhahahahahh jkjkjkk 🧪",
       ],
-      question: { q: "Tuition ke baad hum sabse zyada kya karte the? 😄", a: "" },
+      question: { q: "U gave me many gifts… what was the first thing I gave u, and what did u give me? 🎁", a: "" },
     },
 
     {
