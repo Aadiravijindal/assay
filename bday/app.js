@@ -17,7 +17,7 @@
   let unlocked = Math.min(store.get("bday_unlocked", 0), S.length - 1);
 
   // ---------- password ----------
-  // "Wo fav naam kya tha jo main tumhe bulata tha?" — jawab hash karke rakha hai taaki source mein seedha na dikhe.
+  // "Wo fav naam kya tha jo main tumhe bulata tha?" : jawab hash karke rakha hai taaki source mein seedha na dikhe.
   const PASS = 193487358;
   const hash = (s) => { let x = 5381; for (const c of s) x = ((x << 5) + x + c.codePointAt(0)) | 0; return x >>> 0; };
   const norm = (s) => String(s).toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
@@ -92,7 +92,7 @@
   audio.preload = "none";
   let muted = false, currentSong = null, actx = null, boxGain = null, boxTimer = null;
 
-  // Happy Birthday — music box version
+  // Happy Birthday, music box version
   const HB = [[67,.75],[67,.25],[69,1],[67,1],[72,1],[71,2],[67,.75],[67,.25],[69,1],[67,1],[74,1],[72,2],
               [67,.75],[67,.25],[79,1],[76,1],[72,1],[71,1],[69,2],[77,.75],[77,.25],[76,1],[72,1],[74,1],[72,3]];
   function ensureCtx() {
@@ -265,15 +265,13 @@
 
   function home() {
     playSong(C.homeSong);
-    const startLabel = unlocked > 0 ? `Wahi se continue karo 🕊️` : `Udaan shuru karo 🕊️`;
     app.innerHTML = `
       <section class="screen home">
         <p class="kicker">🎂 HAPPY BIRTHDAY 🎂</p>
         <h1>Chotuuuuu<br><span>ka bday 🎂</span></h1>
         <div class="measure">${figureSVG()}</div>
-        <p class="sub">Ye hai official height chart 📏 Pigeon ke saath level-by-level udo aur dekho 5'1" tak pahunch paati ho ya nahi 😂</p>
-        <button class="btn big" id="start">${startLabel}</button>
         <p class="map-title">📏 height chart</p>
+        ${unlocked === 0 ? `<p class="map-hint">click on 1' 👇</p>` : ""}
         <ol class="map">
           ${S.map((s, i) => `
             <li class="${i > unlocked ? "locked" : ""} ${i === unlocked ? "current" : ""}">
@@ -282,8 +280,10 @@
               </button>
             </li>`).join("")}
         </ol>
+        ${unlocked > 0 ? `<button class="btn big" id="start">Wahi se continue karo 🕊️</button>` : ""}
       </section>`;
-    $("#start").addEventListener("click", () => fly(unlocked));
+    const start = $("#start");
+    if (start) start.addEventListener("click", () => fly(unlocked));
     $$(".map button", app).forEach((b) => b.addEventListener("click", () => fly(+b.dataset.i)));
     const fig = $(".fig", app);
     fig.addEventListener("click", () => { fig.classList.remove("boing"); void fig.getBoundingClientRect(); fig.classList.add("boing"); });
