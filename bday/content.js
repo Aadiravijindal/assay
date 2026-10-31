@@ -69,22 +69,6 @@ window.BDAY = {
     },
 
     {
-      height: "3'",
-      title: "Pehli baar jab tumhe dekha 👀",
-      type: "story",
-      song: "",
-      songName: "",
-      photo: "",
-      caption: "pehli nazar wali vibes ✨",
-      text: [
-        "Pehli baar jab tumhe dekha tha, mujhe kya pata tha ki ye chhotu si ladki meri life ka itna bada hissa ban jaayegi.",
-        "Sach bataun toh pehle sirf ek cheez notice hui thi… itni choti koi kaise ho sakta hai? 😂",
-        "Aur phir dheere dheere, baaki sab bhi notice hone laga.",
-      ],
-      question: { q: "Batao, humari pehli mulaqat kahan hui thi? 🤔", a: "" },
-    },
-
-    {
       height: "4'5\"",
       title: "Basketball 🏀",
       subtitle: "4'5\" pe hoop tak pahunch paogi? 😏",
