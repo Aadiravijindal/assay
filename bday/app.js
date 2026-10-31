@@ -335,7 +335,7 @@
         <div class="card">
           <div class="court"><div class="hoop"><div class="board"></div><div class="rim"></div><div class="net"></div></div>
             <div class="shout"></div><div class="ball">🏀</div></div>
-          <div class="shoot-row"><p class="score">🏀 0 / ${s.goal || 3}</p><button class="btn shoot">Shoot!</button></div>
+          <div class="shoot-row"><p class="score">Shots 0 / ${s.goal || 3} · 🏀 0</p><button class="btn shoot">Shoot!</button></div>
         </div>`;
     },
     letter(s) {
@@ -382,7 +382,7 @@
       </section>`;
 
     const next = $(".next", app), hint = $(".hint", app);
-    const taskHint = { ten: "Saare cards kholo 💌", basketball: `${s.goal || 3} basket daalo 🏀`, letter: "Letter kholo 💌", gifts: "Saare gifts kholo 🎁" }[s.type];
+    const taskHint = { ten: "Saare cards kholo 💌", basketball: `${s.goal || 3} shots maaro 🏀`, letter: "Letter kholo 💌", gifts: "Saare gifts kholo 🎁" }[s.type];
     function check() {
       const ok = done.q && done.task;
       next.disabled = !ok;
@@ -433,36 +433,37 @@
       const goal = s.goal || 3;
       const court = $(".court", app), hoop = $(".hoop", app), ball = $(".ball", app), shout = $(".shout", app);
       const btn = $(".shoot", app), score = $(".score", app);
-      let hits = 0, misses = 0;
+      let hits = 0, misses = 0, shots = 0;
       const say = (t) => { shout.textContent = t; shout.classList.remove("show"); void shout.offsetWidth; shout.classList.add("show"); };
       btn.addEventListener("click", () => {
         btn.disabled = true;
+        shots++;
         // tap ke time hoop kahan hai, wahi decide karta hai
         const c = court.getBoundingClientRect(), h = hoop.getBoundingClientRect();
         const off = Math.abs(h.left + h.width / 2 - (c.left + c.width / 2));
-        const tol = misses >= 4 ? h.width * .6 : h.width * .4; // thodi madad agar baar baar miss ho 😉
-        const hit = off < tol;
+        const hit = off < h.width * .4;
         if (hit) hoop.style.animationPlayState = "paused";
         ball.className = "ball"; void ball.offsetWidth; ball.className = "ball shoot";
         setTimeout(() => {
           if (hit) {
-            hits++; misses = 0;
+            hits++;
             ball.className = "ball swish";
             say(pick(["Swish! 🔥", "Basket! 🏀", "Kya baat hai! 😎", "Height ko maaro goli 😂"]));
-            if (hits === 2) court.classList.add("fast");
           } else {
             misses++;
             ball.className = "ball miss";
-            say(pick(["Air ball 😂", "Height ka issue hai kya? 🤭", "Arey! Phir se 😤", "Chhote haath 🤏😂"]));
+            say(pick(["Air ball 😂", "Height ka issue hai kya? 🤭", "Arey! 😤", "Chhote haath 🤏😂"]));
           }
-          score.textContent = `🏀 ${Math.min(hits, goal)} / ${goal}`;
+          score.textContent = `Shots ${Math.min(shots, goal)} / ${goal} · 🏀 ${hits}`;
           setTimeout(() => {
             ball.className = "ball";
             hoop.style.animationPlayState = "";
-            if (hits >= goal) {
-              btn.textContent = "Champion! 🏆";
+            btn.disabled = false;
+            if (shots === goal) {
+              say(hits === 0 ? "0 baskets 😂 teacher se seekho" : hits === goal ? "3/3?! okay okay 😳" : `${hits} basket… not bad shorty 😏`);
+              btn.textContent = "Aur shoot karo 🏀";
               if (!done.task) { done.task = true; confetti(40); check(); }
-            } else btn.disabled = false;
+            }
           }, 800);
         }, 550);
       });
