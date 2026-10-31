@@ -19,19 +19,29 @@ window.BDAY = {
   stages: [
     {
       height: "Level 1",
-      title: "Ek chhotu si pari aayi 👶",
+      title: "BKL ka birth 👶",
+      subtitle: "1 November 2006 🎂",
       type: "photos",
       song: "",
       songName: "",
-      // Bachpan ki photos yahan daalo:
-      // photos: [{ src: "img/baby1.jpg", caption: "itti si 🥹" }, { src: "img/baby2.jpg", caption: "already nakhre" }],
-      photos: [],
-      text: [
-        "Aaj ke din, kuch saal pehle, duniya mein ek bahut hi chhoti si ladki aayi thi… (aur sach bolein toh aaj tak chhoti hi hai 😂)",
-        "Tab bhi forehead itna hi bada tha kya? Plane tab se hi land ho rahe hain? 🛬",
-        "Dekho kitni cute thi. Ab bhi ho, bas nakhre thode zyada ho gaye hain 🙈",
+      photos: [
+        { src: "img/baby1.jpg", caption: "itti si BKL 🪔 (side-eye tab se 😤)" },
       ],
-      question: { q: "Warm-up sawaal: tumhari birthday ki date kya hai? 😌", a: "" },
+      text: [
+        "1 November 2006 — duniya ki sabse gori insaan paida hui (ig 😂🤍)",
+        "Aur pakka gussa karte hue hi paida hui hogi. Kitnaaaa gussa karti hai yaar… kitnaaaaaaaaaaa 😤 But theek hai 🙄",
+        "Doctor ne bhi bola hoga — \"Congratulations, ladki hui hai… height baad mein aayegi.\" (Spoiler: nahi aayi 😂📏)",
+        "Itni si thi, par nakhre tab se hi full size the 😌",
+        "But genuinely… God ka bahut shukriya ki tum mili 🙏 Unhone tumhe neeche bheja obvious reason se — upar bhi sabko tang hi kar rahi hogi lmaooo 😂",
+        "Naraz rehne ke alawa (jo tum 24/7 rehti ho 🙄)… agar tum nahi milti na, toh pata nahi kya hota.",
+        "Aur haan, tum mujhse badi ho — nahiiii 🙅‍♂️ sirf AGE mein. Height mein toh main lowkey poora 1 feet bada hoon hahahahahahaha 📏😂",
+        "But yeahhhh… thanks for getting on earth 🌍💗",
+      ],
+      question: {
+        q: "Warm-up sawaal: agar tum paida hote waqt worm 🪱 hoti, toh kya tumhari height human wali jitni hi hoti? 🤔",
+        a: "",
+        yay: "Jawab jo bhi ho… worm bhi shayad tumse lamba hota 🪱😂",
+      },
     },
 
     {

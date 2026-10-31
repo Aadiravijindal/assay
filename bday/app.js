@@ -23,29 +23,65 @@
   const norm = (s) => String(s).toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
 
   // ---------- background emojis ----------
-  // pimples, short person, big forehead + plane landing, small hands, small feet, cute big tummy
-  const BG = ["🔴", "🧍‍♀️", "FOREHEAD", "🤏", "🦶", "🫃", "🛬", "🔴", "🤏", "🦶", "🧍‍♀️", "🫃", "💗"];
+  // Big custom stickers: forehead runway, tiny girl in a pinch, tummy, pimples, no eyebrows, tiny feet, tiny hands
+  const SK = {
+    forehead: `<svg viewBox="0 0 100 124"><ellipse cx="50" cy="70" rx="42" ry="52" fill="#ffdcc2" stroke="#e7a882" stroke-width="3"/>
+      <path d="M9 78 Q6 40 20 30 Q14 60 18 92Z M91 78 Q94 40 80 30 Q86 60 82 92Z" fill="#4a2f25"/>
+      <rect x="40" y="24" width="20" height="56" rx="4" fill="#8f97a8"/>
+      <line x1="50" y1="28" x2="50" y2="76" stroke="#fff" stroke-width="2.5" stroke-dasharray="6 5"/>
+      <circle cx="42" cy="78" r="1.6" fill="#ffd34d"/><circle cx="58" cy="78" r="1.6" fill="#ffd34d"/><circle cx="42" cy="26" r="1.6" fill="#ffd34d"/><circle cx="58" cy="26" r="1.6" fill="#ffd34d"/>
+      <circle cx="36" cy="94" r="4" fill="#3a2a4a"/><circle cx="64" cy="94" r="4" fill="#3a2a4a"/>
+      <circle cx="28" cy="104" r="5" fill="#ff9fb8" opacity=".6"/><circle cx="72" cy="104" r="5" fill="#ff9fb8" opacity=".6"/>
+      <path d="M41 107 Q50 114 59 107" stroke="#3a2a4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="56" y="22" font-size="26">🛬</text></svg>`,
+    tiny: `<svg viewBox="0 0 100 100"><text x="6" y="58" font-size="62">🤏</text>
+      <g transform="translate(40 26) scale(.62)"><circle cx="6" cy="5" r="5" fill="#ffdcc2" stroke="#3a2a4a" stroke-width="1.5"/>
+      <path d="M2 10 L10 10 L13 24 L-1 24Z" fill="#ff7eb6"/><path d="M4 24 L4 32 M8 24 L8 32" stroke="#3a2a4a" stroke-width="1.8" stroke-linecap="round"/></g>
+      <text x="50" y="96" font-size="13" font-weight="800" fill="#e2508f" text-anchor="middle" font-family="Baloo 2, sans-serif">itni si</text></svg>`,
+    tummy: `<svg viewBox="0 0 100 100"><circle cx="50" cy="56" r="40" fill="#ffdcc2" stroke="#e7a882" stroke-width="3"/>
+      <path d="M12 44 Q50 20 88 44 L90 18 Q50 6 10 18Z" fill="#ff7eb6" stroke="#e2508f" stroke-width="3" stroke-linejoin="round"/>
+      <path d="M46 60 Q50 66 54 60" stroke="#c98563" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <text x="64" y="86" font-size="14">💗</text><text x="20" y="80" font-size="11">✨</text></svg>`,
+    pimples: `<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#ffcc4d" stroke="#e8a530" stroke-width="3"/>
+      <circle cx="35" cy="44" r="5" fill="#3a2a4a"/><circle cx="65" cy="44" r="5" fill="#3a2a4a"/>
+      <path d="M36 70 Q43 64 50 70 Q57 76 64 70" stroke="#3a2a4a" stroke-width="3" fill="none" stroke-linecap="round"/>
+      ${[[24,60,5],[74,62,4.5],[54,24,4],[30,26,3.5],[70,28,3],[62,58,3],[44,56,2.5]].map(([x,y,r]) => `<circle cx="${x}" cy="${y}" r="${r}" fill="#e8483b"/><circle cx="${x-r/3}" cy="${y-r/3}" r="${r/3}" fill="#ffb3a8"/>`).join("")}</svg>`,
+    browless: `<svg viewBox="0 0 100 100"><circle cx="50" cy="54" r="42" fill="#ffcc4d" stroke="#e8a530" stroke-width="3"/>
+      <path d="M24 32 Q34 26 44 32 M56 32 Q66 26 76 32" stroke="#b07a12" stroke-width="2.5" fill="none" stroke-dasharray="3 4" stroke-linecap="round"/>
+      <ellipse cx="35" cy="48" rx="9" ry="11" fill="#fff"/><ellipse cx="65" cy="48" rx="9" ry="11" fill="#fff"/>
+      <circle cx="36" cy="50" r="5" fill="#3a2a4a"/><circle cx="66" cy="50" r="5" fill="#3a2a4a"/>
+      <ellipse cx="50" cy="76" rx="6" ry="7" fill="#3a2a4a"/>
+      <text x="50" y="16" font-size="15" font-weight="800" fill="#e2508f" text-anchor="middle" font-family="Baloo 2, sans-serif">eyebrows??</text></svg>`,
+    feet: `<svg viewBox="0 0 100 100"><rect x="6" y="66" width="88" height="18" rx="3" fill="#fff3b0" stroke="#d9b84a" stroke-width="2"/>
+      ${Array.from({length: 11}, (_, i) => `<line x1="${10 + i * 8}" y1="66" x2="${10 + i * 8}" y2="${i % 2 ? 72 : 76}" stroke="#a58a2a" stroke-width="1.5"/>`).join("")}
+      <ellipse cx="42" cy="60" rx="4" ry="6" fill="#ffdcc2" stroke="#c98563" stroke-width="1.5"/><ellipse cx="56" cy="60" rx="4" ry="6" fill="#ffdcc2" stroke="#c98563" stroke-width="1.5"/>
+      <path d="M42 54 L42 20 M56 54 L56 20" stroke="#3a2a4a" stroke-width="5" stroke-linecap="round"/>
+      <text x="50" y="98" font-size="13" font-weight="800" fill="#e2508f" text-anchor="middle" font-family="Baloo 2, sans-serif">size: 🤏</text></svg>`,
+    hands: `<svg viewBox="0 0 100 100"><circle cx="64" cy="50" r="28" fill="#d8dbe3" stroke="#9aa0ad" stroke-width="3"/>
+      <text x="64" y="58" font-size="22" font-weight="800" fill="#6b7280" text-anchor="middle" font-family="Baloo 2, sans-serif">₹1</text>
+      <g transform="translate(14 42)"><rect x="0" y="8" width="14" height="14" rx="5" fill="#ffdcc2" stroke="#c98563" stroke-width="1.5"/>
+      ${[1, 4.5, 8, 11.5].map((x) => `<rect x="${x}" y="1" width="2.6" height="9" rx="1.3" fill="#ffdcc2" stroke="#c98563" stroke-width="1"/>`).join("")}
+      <rect x="-4" y="12" width="6" height="2.6" rx="1.3" fill="#ffdcc2" stroke="#c98563" stroke-width="1"/></g>
+      <text x="50" y="96" font-size="12" font-weight="800" fill="#e2508f" text-anchor="middle" font-family="Baloo 2, sans-serif">coin &gt; haath</text></svg>`,
+  };
+  const SIZES = { forehead: [130, 175], tiny: [90, 120], tummy: [90, 125], pimples: [85, 115], browless: [90, 120], feet: [85, 110], hands: [85, 110] };
   function emojiBackground() {
     const bg = document.getElementById("emoji-bg");
-    const n = window.innerWidth < 600 ? 18 : 30;
+    const order = ["forehead", "tiny", "pimples", "tummy", "browless", "feet", "hands", "forehead", "pimples", "browless", "tummy", "tiny", "feet", "hands"];
+    const n = window.innerWidth < 600 ? 10 : 14;
     for (let i = 0; i < n; i++) {
-      const e = BG[i % BG.length];
+      const k = order[i];
       const s = document.createElement("span");
-      if (e === "FOREHEAD") {
-        s.className = "combo";
-        s.innerHTML = "<i>🛬</i><b>🙂</b>";
-      } else s.textContent = e;
-      let size = rand(22, 42);
-      if (e === "🔴") size = rand(8, 14);          // chhote pimples
-      if (e === "🤏" || e === "🦶") size = rand(14, 22); // chhote haath-pair
-      if (e === "🧍‍♀️") size = rand(16, 24);        // chhoti si
-      if (e === "FOREHEAD") size = rand(40, 56);
-      s.style.fontSize = size + "px";
-      s.style.left = rand(-2, 98) + "vw";
+      s.className = "sticker";
+      s.innerHTML = SK[k];
+      const w = rand(SIZES[k][0], SIZES[k][1]) * (window.innerWidth < 600 ? .85 : 1);
+      s.style.width = w + "px";
+      s.style.left = (i / n) * 100 + rand(-4, 4) - 6 + "vw";
       s.style.setProperty("--dx", rand(-40, 40) + "px");
-      s.style.setProperty("--rot", rand(-40, 40) + "deg");
-      s.style.animationDuration = rand(14, 30) + "s";
-      s.style.animationDelay = -rand(0, 30) + "s";
+      s.style.setProperty("--rot", rand(-25, 25) + "deg");
+      const dur = rand(20, 34);
+      s.style.animationDuration = dur + "s";
+      s.style.animationDelay = -rand(0, dur) + "s";
       bg.appendChild(s);
     }
   }

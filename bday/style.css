@@ -35,13 +35,15 @@ input { font: inherit; }
   position: absolute; bottom: -60px; opacity: .55; user-select: none;
   animation: floatUp linear infinite;
 }
+#emoji-bg .sticker { bottom: -200px; opacity: .62; filter: drop-shadow(0 6px 8px rgba(120,60,140,.18)); }
+#emoji-bg .sticker svg { width: 100%; height: auto; display: block; overflow: visible; }
 #emoji-bg .combo { display: inline-flex; flex-direction: column; align-items: center; line-height: .8; }
 #emoji-bg .combo i { font-style: normal; font-size: .45em; transform: translate(.3em, .25em) rotate(-10deg); }
 #emoji-bg .combo b { font-weight: normal; }
 @keyframes floatUp {
   0%   { transform: translate(0, 0) rotate(0deg); }
   50%  { transform: translate(var(--dx), -55vh) rotate(calc(var(--rot) / 2)); }
-  100% { transform: translate(0, -115vh) rotate(var(--rot)); }
+  100% { transform: translate(0, calc(-100vh - 260px)) rotate(var(--rot)); }
 }
 
 /* ---------- layout ---------- */
