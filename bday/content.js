@@ -1,5 +1,5 @@
 /* =========================================================
-   SAARA CONTENT YAHAN HAI — sirf ye file edit karo ✏️
+   SAARA CONTENT YAHAN HAI: sirf ye file edit karo ✏️
    ---------------------------------------------------------
    • song:     "songs/level1.mp3" jaisa path daalo (bday/songs/ folder mein file rakho).
                Khaali chhodoge ("") toh music-box wala Happy Birthday bajega.
@@ -12,7 +12,7 @@
 
 window.BDAY = {
   herName: "BKL",
-  from: "— wahi purana pagal 🙃",
+  from: "wahi purana pagal 🙃",
   defaultPhoto: "img/her.jpg",
   homeSong: "",
 
@@ -85,7 +85,7 @@ window.BDAY = {
       ],
       goal: 3,
       question: {
-        q: "Kaun better bb player hai — main ya tum? (Tum better jhooth mat bolna shortyyyyyyy 😤)",
+        q: "Kaun better bb player hai, main ya tum? (Tum better jhooth mat bolna shortyyyyyyy 😤)",
         a: "",
         yay: "Sach toh sabko pata hai 😎🏀",
       },
@@ -94,7 +94,7 @@ window.BDAY = {
     {
       height: "4'",
       title: "Leena ma'am tuition 📚",
-      subtitle: "4'9\" — ur REAL height 🤭",
+      subtitle: "4'9\", ur REAL height 🤭",
       type: "story",
       song: "",
       songName: "",
@@ -124,7 +124,7 @@ window.BDAY = {
       text: [
         "apart from all the jokesss… thanks for everything 🙏",
         "thanks for teaching me things, thanks for showing me love, real love",
-        "being there when no one was supporting me — in exams, when I was feeling low, or after all those fk ups… thanks",
+        "being there when no one was supporting me, in exams, when I was feeling low, or after all those fk ups… thanks",
         "or just for being here on earth, ur presence means a lot 💗",
         "hope u always stay happy",
       ],
@@ -134,7 +134,7 @@ window.BDAY = {
     {
       height: "5'1\"",
       title: "Sorry for everything 🥺",
-      subtitle: "5'1\" — finally, wahi height jo tum sabko batati ho 😌",
+      subtitle: "5'1\", finally wahi height jo tum sabko batati ho 😌",
       type: "letter",
       song: "",
       songName: "",
@@ -143,7 +143,7 @@ window.BDAY = {
       spam: true,
       from: "from bkl",
       text: [
-        "Sorry — jo bhi maine galat kiya, jo bhi bola jo nahi bolna chahiye tha, aur jab tumhe meri zarurat thi aur main wahan nahi tha.",
+        "Sorry, jo bhi maine galat kiya, jo bhi bola jo nahi bolna chahiye tha, aur jab tumhe meri zarurat thi aur main wahan nahi tha.",
         "Koi excuse nahi hai. Bas itna jaan lo ki mujhe sach mein afsos hai.",
         "but I reallly wanna undo everything. ik it's diff for u, but it's alright, I'll wait as much as u want, take ur time to heal 🥺",
         "bcz ik like no one else has the same vibe, not even close to what u have. u r one hell of a piece hahahahahahahhah 💗",

@@ -1,4 +1,4 @@
-# 🕊️ Ek Chhoti Si Udaan — birthday game
+# 🕊️ Chotuuuuu ka bday: birthday game
 
 Open `index.html` (or the GitHub Pages URL + `/bday/`). Password: the fav nickname.
 

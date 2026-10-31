@@ -17,7 +17,7 @@
   let unlocked = Math.min(store.get("bday_unlocked", 0), S.length - 1);
 
   // ---------- password ----------
-  // "Wo fav naam kya tha jo main tumhe bulata tha?" — jawab hash karke rakha hai taaki source mein seedha na dikhe.
+  // "Wo fav naam kya tha jo main tumhe bulata tha?" : jawab hash karke rakha hai taaki source mein seedha na dikhe.
   const PASS = 193487358;
   const hash = (s) => { let x = 5381; for (const c of s) x = ((x << 5) + x + c.codePointAt(0)) | 0; return x >>> 0; };
   const norm = (s) => String(s).toLowerCase().normalize("NFKD").replace(/[^a-z0-9]/g, "");
@@ -92,7 +92,7 @@
   audio.preload = "none";
   let muted = false, currentSong = null, actx = null, boxGain = null, boxTimer = null;
 
-  // Happy Birthday — music box version
+  // Happy Birthday, music box version
   const HB = [[67,.75],[67,.25],[69,1],[67,1],[72,1],[71,2],[67,.75],[67,.25],[69,1],[67,1],[74,1],[72,2],
               [67,.75],[67,.25],[79,1],[76,1],[72,1],[71,1],[69,2],[77,.75],[77,.25],[76,1],[72,1],[74,1],[72,3]];
   function ensureCtx() {
