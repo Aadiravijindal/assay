@@ -204,7 +204,7 @@
     form.addEventListener("submit", (ev) => {
       ev.preventDefault();
       if (hash(norm(input.value)) === PASS) {
-        try { sessionStorage.setItem("bday_in", "1"); } catch (e) {}
+        store.set("bday_in", 1);
         ensureCtx();
         confetti(90);
         err.textContent = "Haan yahi! 🥳 Andar aao…";
@@ -269,7 +269,7 @@
     app.innerHTML = `
       <section class="screen home">
         <p class="kicker">🎂 HAPPY BIRTHDAY 🎂</p>
-        <h1>Ek chhoti si udaan<br><span>5'1" tak 🕊️</span></h1>
+        <h1>Chotuuuuu<br><span>ka bday 🎂</span></h1>
         <div class="measure">${figureSVG()}</div>
         <p class="sub">Ye hai official height chart 📏 Pigeon ke saath level-by-level udo aur dekho 5'1" tak pahunch paati ho ya nahi 😂</p>
         <button class="btn big" id="start">${startLabel}</button>
@@ -358,7 +358,8 @@
     const s = S[i];
     playSong(s.song);
     const needsTask = ["ten", "basketball", "letter", "gifts"].includes(s.type);
-    const done = { q: !(s.question && s.question.q), task: !needsTask };
+    const already = i < unlocked; // pehle complete kiya hua level: dobara karna zaroori nahi
+    const done = { q: already || !(s.question && s.question.q), task: already || !needsTask };
     const last = i === S.length - 1;
 
     app.innerHTML = `
@@ -557,6 +558,6 @@
   // ---------- boot ----------
   emojiBackground();
   let inside = false;
-  try { inside = sessionStorage.getItem("bday_in") === "1"; } catch (e) {}
+  inside = store.get("bday_in", 0) === 1;
   inside ? home() : lock();
 })();
