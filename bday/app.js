@@ -33,7 +33,7 @@
       <circle cx="36" cy="94" r="4" fill="#3a2a4a"/><circle cx="64" cy="94" r="4" fill="#3a2a4a"/>
       <circle cx="28" cy="104" r="5" fill="#ff9fb8" opacity=".6"/><circle cx="72" cy="104" r="5" fill="#ff9fb8" opacity=".6"/>
       <path d="M41 107 Q50 114 59 107" stroke="#3a2a4a" stroke-width="3" fill="none" stroke-linecap="round"/>
-      <text x="56" y="22" font-size="26">🛬</text></svg>`,
+      <text x="44" y="30" font-size="44">🛬</text></svg>`,
     tiny: `<svg viewBox="0 0 100 100"><text x="6" y="58" font-size="62">🤏</text>
       <g transform="translate(40 26) scale(.62)"><circle cx="6" cy="5" r="5" fill="#ffdcc2" stroke="#3a2a4a" stroke-width="1.5"/>
       <path d="M2 10 L10 10 L13 24 L-1 24Z" fill="#ff7eb6"/><path d="M4 24 L4 32 M8 24 L8 32" stroke="#3a2a4a" stroke-width="1.8" stroke-linecap="round"/></g>
@@ -254,7 +254,7 @@
         <ellipse cx="168" cy="396" rx="6" ry="3.2" fill="#3a2a4a"/>
         <image href="img/face.png" x="116" y="${top}" width="72" height="86.4"/>
       </g>
-      <text class="plane" x="150" y="${top + 14}" font-size="20">🛬</text>
+      <text class="plane" x="128" y="${top + 26}" font-size="44">🛬</text>
       <text x="200" y="250" font-size="10" font-weight="700" fill="#7a6a8c">← chhote haath</text>
       <text x="176" y="392" font-size="10" font-weight="700" fill="#7a6a8c">← chhote pair</text>
     </svg>`;

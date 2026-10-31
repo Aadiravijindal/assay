@@ -18,7 +18,7 @@ window.BDAY = {
 
   stages: [
     {
-      height: "Level 1",
+      height: "1'",
       title: "BKL ka birth 👶",
       subtitle: "1 November 2006 🎂",
       type: "photos",
@@ -45,7 +45,7 @@ window.BDAY = {
     },
 
     {
-      height: "Level 2",
+      height: "2'",
       title: "10 cheezein jo mujhe tumhare baare mein pasand thi 💌",
       type: "ten",
       song: "",
@@ -68,7 +68,7 @@ window.BDAY = {
     },
 
     {
-      height: "Level 3",
+      height: "3'",
       title: "Pehli baar jab tumhe dekha 👀",
       type: "story",
       song: "",
