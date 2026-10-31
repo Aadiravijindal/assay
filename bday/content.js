@@ -71,18 +71,25 @@ window.BDAY = {
     {
       height: "4'5\"",
       title: "Basketball 🏀",
-      subtitle: "4'5\" pe hoop tak pahunch paogi? 😏",
+      subtitle: "Shortyyy, admit karo main tumhara teacher tha 😏",
       type: "basketball",
       song: "",
       songName: "",
-      photo: "",
-      caption: "future WNBA star (height ke alawa sab ready hai)",
+      video: "img/bb.mp4",
+      caption: "shorty in action 🎥",
       text: [
-        "Tumhe basketball khelte dekhna… hoop tak ball pahunchane ke liye poori jaan laga deti thi 😂",
-        "Chalo, aaj dekhte hain. 3 basket daalo tabhi aage jaane milega!",
+        "Seeeee shortyyy, tum bb mein shit ho 😂 Mujhe kabhi defeat nahi kar sakti. Aur being your teacher — ik tumne meri action copy ki hai, toh admit karo main tumhara teacher tha 😤🏀",
+        "Waise tum kisi bhi ladki se better khelti ho jo maine aaj tak dekhi hai… but mere saamne? Nahhhhhh never. Mujhe bas haath upar karne hain aur tum jump karti reh jaogi hahahahahahahahahahaha 🙋‍♂️🦘",
+        "But yeahhh… ig bb ne tumhe jaanne mein bahut important role play kiya. Pehle main tumse hate karta tha 😂 Aur ohhhh god, maine tumhara naam Utsav ke saath pair kiya tha 🤢 Ab sochke bhi disgust hota hai, kaise kar diya maine wo 😭",
+        "Tbh bb tumhare bina fun nahi hai. Humari cheez bb ki wajah se hi shuru hui thi… so thanks bb 🏀💗",
+        "Chalo shorty, 3 basket daalo tabhi aage jaane milega 😏",
       ],
       goal: 3,
-      question: { q: "Basketball mein tumhari sabse favourite cheez kya thi? 🏀", a: "" },
+      question: {
+        q: "Kaun better bb player hai — main ya tum? (Tum better jhooth mat bolna shortyyyyyyy 😤)",
+        a: "",
+        yay: "Sach toh sabko pata hai 😎🏀",
+      },
     },
 
     {

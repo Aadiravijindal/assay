@@ -157,6 +157,9 @@
   const polaroid = (src, cap) => `<figure class="polaroid"><img src="${esc(src || C.defaultPhoto)}" alt="" loading="lazy"
       onerror="this.onerror=null;this.src='${esc(C.defaultPhoto)}'">${cap ? `<figcaption>${esc(cap)}</figcaption>` : ""}</figure>`;
 
+  const videoFrame = (src, cap) => `<figure class="polaroid video"><video src="${esc(src)}" autoplay muted loop playsinline controls preload="metadata"></video>
+      ${cap ? `<figcaption>${esc(cap)}</figcaption>` : ""}</figure>`;
+
   function confetti(n = 70) {
     const bits = ["🎉", "💗", "✨", "🎊", "🕊️", "💖", "🎂", "🌸"];
     for (let i = 0; i < n; i++) {
@@ -328,7 +331,7 @@
       return `${polaroid(s.photo, s.caption)}<div class="card story">${paras(s.text)}</div>`;
     },
     basketball(s) {
-      return `${polaroid(s.photo, s.caption)}<div class="card story">${paras(s.text)}</div>
+      return `${s.video ? videoFrame(s.video, s.caption) : polaroid(s.photo, s.caption)}<div class="card story">${paras(s.text)}</div>
         <div class="card">
           <div class="court"><div class="hoop"><div class="board"></div><div class="rim"></div><div class="net"></div></div>
             <div class="shout"></div><div class="ball">🏀</div></div>
