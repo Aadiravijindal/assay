@@ -153,26 +153,17 @@ window.BDAY = {
 
     {
       height: "🎁 Bonus",
-      title: "20 jagah, 20 chhote gifts 🎁",
-      type: "gifts",
+      title: "a lil gifts 🎁",
+      type: "story",
       song: "",
       songName: "",
-      photo: "",
-      caption: "ye sab tumhare liye",
+      photo: "img/gifts.jpg",
+      caption: "for u 🎁",
       text: [
-        "Ek baat bataun? Maine jitni bhi jagah ghooma, har jagah se tumhare liye ek chhota sa gift utha liya. Total 20 jagah, 20 gifts 🙈",
-        "Socha tha November mein aaunga toh de dunga… par ab Christmas ke paas aa raha hoon 🎄",
-        "Saare 20 dabbe kholo 👇",
+        "so I visited 20 places and collected 20 gifts for u 🎁 tbh the last 4 are from the same place 😂",
+        "I'll give u when we next meet. not like big or something, but yeahhh, hope u like themmm 💗",
       ],
-      // Har gift kis jagah se hai — yahan apni 20 jagah likho:
-      places: [
-        "Jagah #1", "Jagah #2", "Jagah #3", "Jagah #4", "Jagah #5",
-        "Jagah #6", "Jagah #7", "Jagah #8", "Jagah #9", "Jagah #10",
-        "Jagah #11", "Jagah #12", "Jagah #13", "Jagah #14", "Jagah #15",
-        "Jagah #16", "Jagah #17", "Jagah #18", "Jagah #19", "Jagah #20",
-      ],
-      outro: "Umeed hai tum mind nahi karogi inhe lene mein 🙈 Christmas ke aas paas milte hain… agar tum chaho toh 🎄",
-      question: { q: "In 20 mein se sabse pehle kaunsa gift chahiye? (number ya jagah)", a: "" },
+      question: { q: "wanna go to the 21st place tog?? 🌍✈️", a: "", yay: "okayyy deal then 🥹✈️" },
     },
   ],
 
