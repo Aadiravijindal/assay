@@ -65,7 +65,7 @@ window.BDAY = {
         { t: "Tumhare saath main 'main' tha 🫶", d: "Tumhare aas paas main bas khud ho sakta tha. Bahar jaane ke baad aisa kabhi feel hi nahi hua. Tum meri sweet spot thi — kuch bhi bol sakta tha, koi tension nahi. Yahan toh kuch bhi bolne se pehle 1000 baar sochna padta hai." },
         { t: "Sab kuch 💗", d: "Tum jo bhi ho, jaisi bhi ho — andar se, bahar se — sab kuch. Bas waise hi." },
       ],
-      question: { q: "In 10 mein se tumhe sabse sahi kaunsa laga? (number likho)", a: "" },
+      question: { q: "Is shit coming properly nowadays? 💩🤔", a: "", yay: "Good good, health is wealth 😌💩" },
     },
 
     {
