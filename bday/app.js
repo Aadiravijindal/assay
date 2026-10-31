@@ -271,7 +271,7 @@
         <h1>Chotuuuuu<br><span>ka bday 🎂</span></h1>
         <div class="measure">${figureSVG()}</div>
         <p class="map-title">📏 height chart</p>
-        <p class="map-hint">click on 1' 👇</p>
+        ${unlocked === 0 ? `<p class="map-hint">click on 1' 👇</p>` : ""}
         <ol class="map">
           ${S.map((s, i) => `
             <li class="${i > unlocked ? "locked" : ""} ${i === unlocked ? "current" : ""}">
