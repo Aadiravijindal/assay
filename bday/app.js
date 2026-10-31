@@ -340,8 +340,8 @@
     },
     letter(s) {
       return `${s.video ? videoFrame(s.video, s.caption) : polaroid(s.photo, s.caption)}
-        <button class="envelope"><span class="big">💌</span>Tap karke kholo</button>
-        <div class="letter" hidden>${paras(s.text)}<p class="sign">${esc(C.from)}</p></div>`;
+        ${s.spam ? "" : `<button class="envelope"><span class="big">💌</span>Tap karke kholo</button>`}
+        <div class="letter" hidden>${paras(s.text)}<p class="sign">${esc(s.from || C.from)}</p></div>`;
     },
     gifts(s) {
       return `${polaroid(s.photo, s.caption)}<div class="card story">${paras(s.text)}</div>
@@ -471,10 +471,9 @@
 
     if (s.type === "letter") {
       const env = $(".envelope", app), letter = $(".letter", app);
-      env.addEventListener("click", () => {
-        env.hidden = true; letter.hidden = false;
-        done.task = true; check();
-      });
+      const open = () => { if (env) env.hidden = true; letter.hidden = false; done.task = true; check(); };
+      if (env) env.addEventListener("click", open);
+      if (s.spam) sorrySpam(() => { open(); letter.scrollIntoView({ behavior: "smooth", block: "center" }); });
     }
 
     if (s.type === "gifts") {
@@ -504,6 +503,39 @@
     });
 
     check();
+  }
+
+  // ---------- SORRY SPAM ----------
+  function sorrySpam(onDone) {
+    const ov = document.createElement("div");
+    ov.className = "spam";
+    ov.innerHTML = `<div class="words"></div><button class="btn big stop" hidden>bassssssss karrr aadi 😭</button>`;
+    document.body.appendChild(ov);
+    const words = $(".words", ov), stop = $(".stop", ov);
+    const colors = ["#e2508f", "#6a4fd6", "#3fb7a3", "#ff7eb6", "#b59cff", "#ff6b3d"];
+    let n = 0, timer = null;
+    function spawn() {
+      n++;
+      const w = document.createElement("span");
+      w.className = "sorry-word";
+      w.textContent = n % 7 === 0 ? `SORRYYYY ${n} 🥺` : `sorry ${n}`;
+      w.style.left = rand(-10, 75) + "%";
+      w.style.top = rand(-2, 92) + "%";
+      w.style.fontSize = rand(26, 34 + Math.min(n * 2.5, 90)) + "px";
+      w.style.color = pick(colors);
+      w.style.setProperty("--r", rand(-28, 28) + "deg");
+      words.appendChild(w);
+      if (words.children.length > 160) words.firstChild.remove();
+      if (n === 12) stop.hidden = false;
+      timer = setTimeout(spawn, Math.max(45, 320 - n * 10));
+    }
+    setTimeout(spawn, 500);
+    stop.addEventListener("click", () => {
+      clearTimeout(timer);
+      ov.classList.add("out");
+      setTimeout(() => ov.remove(), 500);
+      onDone();
+    });
   }
 
   // ---------- FINALE ----------

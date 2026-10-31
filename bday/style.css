@@ -274,3 +274,20 @@ p { font-size: 18px; line-height: 1.5; margin: 0 0 12px; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
   #emoji-bg { display: none; }
 }
+
+/* ---------- sorry spam ---------- */
+.spam { position: fixed; inset: 0; z-index: 90; overflow: hidden; background: rgba(255, 240, 247, .55); backdrop-filter: blur(2px); -webkit-backdrop-filter: blur(2px); animation: fadeIn .3s; }
+.spam.out { animation: fadeOut .5s forwards; }
+.spam .words { position: absolute; inset: 0; }
+.sorry-word {
+  position: absolute; font-weight: 800; white-space: nowrap; line-height: 1;
+  text-shadow: 0 3px 0 #fff, 0 6px 14px rgba(120, 60, 140, .25);
+  transform: rotate(var(--r)); animation: sorryPop .35s cubic-bezier(.2, 1.6, .4, 1);
+}
+@keyframes sorryPop { from { transform: rotate(var(--r)) scale(0); opacity: 0; } to { transform: rotate(var(--r)) scale(1); opacity: 1; } }
+.spam .stop {
+  position: absolute; left: 16px; right: 16px; bottom: calc(24px + env(safe-area-inset-bottom)); width: auto; z-index: 2;
+  font-size: 22px; animation: pop .4s cubic-bezier(.2, 1.4, .4, 1), throb 1s ease-in-out .4s infinite;
+}
+@keyframes throb { 50% { transform: scale(1.05); }
+}
