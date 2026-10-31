@@ -339,7 +339,7 @@
         </div>`;
     },
     letter(s) {
-      return `${polaroid(s.photo, s.caption)}
+      return `${s.video ? videoFrame(s.video, s.caption) : polaroid(s.photo, s.caption)}
         <button class="envelope"><span class="big">💌</span>Tap karke kholo</button>
         <div class="letter" hidden>${paras(s.text)}<p class="sign">${esc(C.from)}</p></div>`;
     },
