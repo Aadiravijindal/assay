@@ -784,7 +784,7 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
   function loop(n){ if(vis) drawWire((n-t0)/1000); requestAnimationFrame(loop); }
   if(reduce) drawWire(0); else requestAnimationFrame(loop);
 
-  /* product tabs: auto-advance; the preview box resizes as before, but the section reserves its tallest height so nothing below it moves */
+  /* product tabs: auto-advance; the preview box keeps the height of its tallest tab, and the section reserves its tallest height so nothing below it moves */
   var tabs=[].slice.call(document.querySelectorAll(".tab")), panes=[0,1,2,3].map(function(i){return $("p"+i)}), ti=0, tt=null, DUR=6000, paused=false;
   var tabsEl=$("tabs"), scr=document.querySelector(".screen"), prod=document.querySelector(".prod");
   function showTab(i){ ti=i; tabs.forEach(function(t,j){t.setAttribute("aria-selected",j===i)}); panes.forEach(function(p,j){ var on=j===i; p.classList.toggle("on",on); p.hidden=!on; }); }
@@ -792,9 +792,9 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
     tabs[i].style.setProperty("--dur",(user?DUR*1.6:DUR)/1000+"s"); var b=tabs[i].querySelector(".bar"); b.style.animation="none"; b.offsetWidth; b.style.animation="";
     tabs[i].querySelector(".bar").style.animationPlayState=paused?"paused":"running";
     clearTimeout(tt); if(!reduce && !paused) tt=setTimeout(function(){sel((ti+1)%4)},user?DUR*1.6:DUR); }
-  function fit(){ var cur=ti; prod.classList.add("measuring"); tabsEl.style.minHeight=""; prod.style.minHeight=""; scr.style.minHeight=""; var th=0, ph=0;
-    for(var i=0;i<4;i++){ showTab(i); th=Math.max(th,tabsEl.getBoundingClientRect().height); ph=Math.max(ph,prod.getBoundingClientRect().height); }
-    showTab(cur); tabsEl.style.minHeight=Math.ceil(th)+"px"; prod.style.minHeight=Math.ceil(ph)+"px"; prod.offsetWidth; prod.classList.remove("measuring"); }
+  function fit(){ var cur=ti; prod.classList.add("measuring"); tabsEl.style.minHeight=""; prod.style.minHeight=""; scr.style.minHeight=""; var th=0, ph=0, sh=0;
+    for(var i=0;i<4;i++){ showTab(i); th=Math.max(th,tabsEl.getBoundingClientRect().height); ph=Math.max(ph,prod.getBoundingClientRect().height); sh=Math.max(sh,scr.getBoundingClientRect().height); }
+    showTab(cur); tabsEl.style.minHeight=Math.ceil(th)+"px"; prod.style.minHeight=Math.ceil(ph)+"px"; scr.style.minHeight=Math.ceil(sh)+"px"; prod.offsetWidth; prod.classList.remove("measuring"); }
   tabs.forEach(function(t,i){ t.addEventListener("click",function(){sel(i,true)}); t.addEventListener("keydown",function(e){ if(e.key==="ArrowDown"||e.key==="ArrowRight"){e.preventDefault();sel((i+1)%4,true);tabs[(i+1)%4].focus()} if(e.key==="ArrowUp"||e.key==="ArrowLeft"){e.preventDefault();sel((i+3)%4,true);tabs[(i+3)%4].focus()} }); });
   /* pause while the reader's pointer is on the section */
   prod.addEventListener("mouseenter",function(){ paused=true; clearTimeout(tt); var b=tabs[ti].querySelector(".bar"); b.style.animationPlayState="paused"; });
