@@ -205,11 +205,12 @@ p{margin:0}
 .tab[aria-selected="true"] .i{color:var(--signal)}
 .tab[aria-selected="true"] p{max-height:140px;opacity:1;margin-top:6px}
 .tab .bar{position:absolute;left:0;top:-1px;height:1px;width:0;background:var(--ink)}
-.tab[aria-selected="true"] .bar{animation:fill var(--dur,6s) linear forwards}
+.tab[aria-selected="true"] .bar{width:100%}
 @keyframes fill{to{width:100%}}
 @media (prefers-reduced-motion:reduce){.tab[aria-selected="true"] .bar{animation:none;width:100%}}
 .screen{position:relative;background:var(--night);border-radius:16px;min-height:440px;padding:22px;color:#E6E8EA;overflow:hidden;box-shadow:0 40px 80px -40px rgba(13,14,16,.45)}
 .screen .pane{position:absolute;inset:22px;opacity:0;transform:translateY(8px);transition:opacity .45s,transform .45s;pointer-events:none}
+.screen .pane.measure{transition:none}
 .screen .pane.on{opacity:1;transform:none;position:relative;inset:auto;pointer-events:auto}
 .sc-h{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:.68rem;color:var(--night-mute);letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid var(--night-line);padding-bottom:12px;margin-bottom:18px}
 .mandate-doc{border:1px solid var(--night-line);border-radius:12px;padding:20px;background:rgba(255,255,255,.02)}
@@ -783,14 +784,15 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
   function loop(n){ if(vis) drawWire((n-t0)/1000); requestAnimationFrame(loop); }
   if(reduce) drawWire(0); else requestAnimationFrame(loop);
 
-  /* product tabs auto-advance */
-  var tabs=[].slice.call(document.querySelectorAll(".tab")), panes=[0,1,2,3].map(function(i){return $("p"+i)}), ti=0, tt=null, DUR=6000;
-  function sel(i,user){ ti=i; tabs.forEach(function(t,j){t.setAttribute("aria-selected",j===i)}); panes.forEach(function(p,j){ var on=j===i; p.classList.toggle("on",on); p.hidden=!on; });
-    tabs[i].style.setProperty("--dur",DUR/1000+"s"); var b=tabs[i].querySelector(".bar"); b.style.animation="none"; b.offsetWidth; b.style.animation="";
-    clearTimeout(tt); if(!reduce && !user) tt=setTimeout(function(){sel((ti+1)%4)},DUR); if(user && !reduce) tt=setTimeout(function(){sel((ti+1)%4)},DUR*1.6); }
-  tabs.forEach(function(t,i){ t.addEventListener("click",function(){sel(i,true)}); t.addEventListener("keydown",function(e){ if(e.key==="ArrowDown"||e.key==="ArrowRight"){e.preventDefault();sel((i+1)%4,true);tabs[(i+1)%4].focus()} if(e.key==="ArrowUp"||e.key==="ArrowLeft"){e.preventDefault();sel((i+3)%4,true);tabs[(i+3)%4].focus()} }); });
-  var tabsStarted=false;
-  if("IntersectionObserver" in window){ new IntersectionObserver(function(es){ if(es[0].isIntersecting && !tabsStarted){tabsStarted=true; sel(0)} }).observe($("tabs")); } else sel(0);
+  /* product tabs: switch only when the reader clicks, keep the preview a steady height */
+  var tabs=[].slice.call(document.querySelectorAll(".tab")), panes=[0,1,2,3].map(function(i){return $("p"+i)});
+  function sel(i){ tabs.forEach(function(t,j){t.setAttribute("aria-selected",j===i)}); panes.forEach(function(p,j){ var on=j===i; p.classList.toggle("on",on); p.hidden=!on; }); }
+  tabs.forEach(function(t,i){ t.addEventListener("click",function(){sel(i)}); t.addEventListener("keydown",function(e){ if(e.key==="ArrowDown"||e.key==="ArrowRight"){e.preventDefault();sel((i+1)%4);tabs[(i+1)%4].focus()} if(e.key==="ArrowUp"||e.key==="ArrowLeft"){e.preventDefault();sel((i+3)%4);tabs[(i+3)%4].focus()} }); });
+  var scr=document.querySelector(".screen");
+  function fitScreen(){ if(!scr) return; scr.style.minHeight=""; var cur=panes.findIndex(function(p){return p.classList.contains("on")}), h=0;
+    panes.forEach(function(p){ p.hidden=false; p.classList.add("on","measure"); h=Math.max(h,scr.getBoundingClientRect().height); p.classList.remove("on","measure"); p.hidden=true; });
+    sel(cur<0?0:cur); scr.style.minHeight=Math.ceil(h)+"px"; }
+  sel(0); fitScreen(); var rz; addEventListener("resize",function(){clearTimeout(rz);rz=setTimeout(fitScreen,150)}); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitScreen);
 
   /* sheets */
   var back=$("back"), open=null;
