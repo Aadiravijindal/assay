@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Know Your Agent (KYA) vs Mandates: Agent Identity Is Not Permission | Assay</title>
+<meta name="description" content="Know Your Agent tells a bank which AI agent is calling. It does not say what the agent may do. Why banks need customer mandates, approvals and evidence on top of KYA.">
+<meta name="keywords" content="know your agent, KYA, agent identity verification, AI agent authentication banking, agent authorization vs authentication, verified agents">
+<link rel="canonical" href="https://assayfinance.com/learn/know-your-agent-vs-mandates.html"><meta name="robots" content="index,follow,max-image-preview:large">
+<link rel="icon" href="/favicon.ico" sizes="any"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<meta property="og:type" content="article"><meta property="og:site_name" content="Assay"><meta property="og:url" content="https://assayfinance.com/learn/know-your-agent-vs-mandates.html">
+<meta property="og:title" content="Know Your Agent is not enough: identity versus permission"><meta property="og:description" content="Know Your Agent tells a bank which AI agent is calling. It does not say what the agent may do. Why banks need customer mandates, approvals and evidence on top of KYA."><meta property="og:image" content="https://assayfinance.com/og-image.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Know Your Agent is not enough: identity versus permission"><meta name="twitter:description" content="Know Your Agent tells a bank which AI agent is calling. It does not say what the agent may do. Why banks need customer mandates, approvals and evidence on top of KYA."><meta name="twitter:image" content="https://assayfinance.com/og-image.png">
+<meta property="article:published_time" content="2026-11-01">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono&display=swap"><style>
+:root{color-scheme:light;--canvas:#F3F3F1;--paper:#FBFBFA;--ink:#0D0E10;--ink-2:#3A3D42;--mute:#7A7E85;--hair:#E2E2DE;--signal:#FF5A1F;--sans:"Geist","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace}
+*{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.nav{position:sticky;top:0;z-index:5;background:rgba(243,243,241,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
+.nav .wrap{display:flex;align-items:center;gap:24px;height:62px}.logo{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:1.05rem;letter-spacing:-.02em}.logo svg{width:34px;height:21px}
+.nav nav{display:flex;gap:22px;font-size:.9rem;color:var(--ink-2)}.nav nav a{text-decoration:none}.nav .btn{margin-left:auto}
+@media(max-width:700px){.nav nav{display:none}}
+.btn{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:8px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+.crumbs{font-family:var(--mono);font-size:.72rem;color:var(--mute);margin-top:48px;letter-spacing:.04em}.crumbs a{text-decoration:none}
+h1{font-weight:300;letter-spacing:-.035em;line-height:1.05;font-size:clamp(2.2rem,5vw,3.6rem);margin:18px 0 0;max-width:20ch;text-wrap:balance}h1 b{font-weight:600}
+.dek{font-size:1.18rem;color:var(--ink-2);max-width:62ch;margin-top:18px}
+.meta{font-family:var(--mono);font-size:.72rem;color:var(--mute);margin-top:18px;padding-bottom:28px;border-bottom:1px solid var(--hair)}
+.grid{display:grid;grid-template-columns:minmax(0,1fr) 280px;gap:56px;margin-top:36px}@media(max-width:900px){.grid{grid-template-columns:minmax(0,1fr)}}
+article{max-width:68ch}article h2{font-weight:500;letter-spacing:-.025em;font-size:1.6rem;line-height:1.2;margin:44px 0 10px}article h3{font-weight:600;font-size:1.1rem;margin:28px 0 6px}
+article p,article li{color:var(--ink-2)}article ul,article ol{padding-left:22px}article li{margin:6px 0}
+.tldr{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:20px 22px;margin-top:4px}.tldr b{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--signal);margin-bottom:6px;font-weight:400}
+table{border-collapse:collapse;width:100%;font-size:.94rem;margin:14px 0}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);vertical-align:top}th{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:400}
+.tbl{overflow-x:auto}
+aside .box{position:sticky;top:90px;background:#0C0D0F;color:#E6E8EA;border-radius:16px;padding:24px}aside h4{margin:0 0 8px;font-weight:500;font-size:1.15rem;letter-spacing:-.02em}aside p{color:#A9ADB3;font-size:.92rem;margin:0 0 16px}aside .btn{background:#fff;color:#000}
+.related{margin-top:56px;border-top:1px solid var(--hair);padding-top:24px}.related ul{list-style:none;padding:0;display:grid;gap:10px}.related a{text-decoration:none;font-weight:500}.related a:hover{color:var(--signal)}
+.src{margin-top:40px;font-size:.84rem;color:var(--mute)}.src ol{padding-left:18px}.src a{color:var(--ink-2)}
+footer{margin-top:90px;border-top:1px solid var(--hair);padding-block:36px;font-size:.84rem;color:var(--mute)}footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}footer a{text-decoration:none}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:36px}@media(max-width:760px){.cards{grid-template-columns:minmax(0,1fr)}}
+.card{display:block;background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:22px;text-decoration:none;transition:border-color .2s}.card:hover{border-color:var(--ink)}.card .k{font-family:var(--mono);font-size:.7rem;color:var(--signal);letter-spacing:.06em;text-transform:uppercase}.card h2{font-weight:500;font-size:1.25rem;letter-spacing:-.02em;margin:8px 0 6px;line-height:1.25}.card p{margin:0;color:var(--ink-2);font-size:.94rem}
+dl.gl{margin-top:20px}dl.gl dt{font-weight:600;margin-top:18px}dl.gl dd{margin:4px 0 0;color:var(--ink-2)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Assay", "item": "https://assayfinance.com/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://assayfinance.com/learn/"}, {"@type": "ListItem", "position": 3, "name": "Know Your Agent is not enough: identity versus permission", "item": "https://assayfinance.com/learn/know-your-agent-vs-mandates.html"}]}, {"@type": "Article", "headline": "Know Your Agent is not enough: identity versus permission", "description": "Know Your Agent tells a bank which AI agent is calling. It does not say what the agent may do. Why banks need customer mandates, approvals and evidence on top of KYA.", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "mainEntityOfPage": "https://assayfinance.com/learn/know-your-agent-vs-mandates.html", "image": "https://assayfinance.com/og-image.png", "author": {"@type": "Organization", "name": "Assay", "url": "https://assayfinance.com/"}, "publisher": {"@type": "Organization", "name": "Assay", "url": "https://assayfinance.com/", "logo": {"@type": "ImageObject", "url": "https://assayfinance.com/icon-512.png"}}, "keywords": "know your agent, KYA, agent identity verification, AI agent authentication banking, agent authorization vs authentication, verified agents"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is Know Your Agent (KYA)?", "acceptedAnswer": {"@type": "Answer", "text": "Know Your Agent is the verification of an AI agent's identity, the company operating it and the person or business it represents."}}, {"@type": "Question", "name": "Is Know Your Agent enough for bank payments?", "acceptedAnswer": {"@type": "Answer", "text": "No. KYA identifies the agent, but banks also need the customer's signed mandate, human approval for exceptions and evidence for each action."}}]}]}</script>
+</head><body>
+<header class="nav"><div class="wrap"><a class="logo" href="/"><svg viewBox="15 80 415 245" aria-hidden="true"><path fill="#0D0E10" fill-rule="evenodd" d="M25 315 L232 102 Q241 91 255 90 L355 90 L355 229 Q355 239 345 239 L331 239 Q322 239 316 246 L250 315 Z M355 240 H420 V315 H355 Z"/></svg>Assay</a><nav aria-label="Main"><a href="/#product">Product</a><a href="/#compare">Compare</a><a href="/learn/">Learn</a><a href="/#why-now">Why now</a></nav><a class="btn" href="/#design-partners">Design partners</a></div></header>
+<main class="wrap">
+<div class="crumbs"><a href='/'>Assay</a> / <a href='/learn/'>Learn</a></div>
+<h1>Know Your Agent is not enough: <b>identity versus permission.</b></h1>
+<p class="dek">Agent identity is becoming widely available. The harder question for a bank is what that identified agent is allowed to do with a specific customer's money.</p>
+<div class="meta">Assay · Published 1 November 2026 · Not legal advice</div>
+<div class='grid'><article><div class="tldr"><b>Short answer</b>Know Your Agent (KYA) answers "who is this agent and whom does it act for?". A bank also needs "what has this customer allowed it to do, who approved this exception, and can we prove it?". That is the job of mandates, approvals and evidence.</div>
+<h2>What KYA does well</h2>
+<p>KYA services verify the agent, the company that runs it and the person or business it represents, often issuing a credential or trust score. A number of identity, fraud and bot-management vendors launched agent products through 2025 and 2026, so identity is fast becoming a commodity input.</p>
+<h2>What KYA does not do</h2>
+<ul><li>Record the customer's limits for this account.</li><li>Stop a verified agent paying a new supplier without asking.</li><li>Produce the record a dispute team or examiner needs.</li><li>Give the customer an off switch at their bank.</li></ul>
+<h2>Authentication versus authorisation</h2>
+<p>Identity is authentication: proving who is calling. A mandate is authorisation: what the caller may do, signed by the person whose money it is. Banks have always needed both, from signature cards for cheques to consent screens for open banking.</p>
+<h2>How the layers fit</h2>
+<div class="tbl"><table><thead><tr><th>Layer</th><th>Question answered</th></tr></thead><tbody>
+<tr><td>Agent identity (KYA)</td><td>Which agent, run by whom, for whom?</td></tr>
+<tr><td>Mandate</td><td>What may it do on this account?</td></tr>
+<tr><td>Approval</td><td>Did the customer confirm this exception?</td></tr>
+<tr><td>Evidence</td><td>Can we prove all of the above later?</td></tr></tbody></table></div>
+<p><a href="/">Assay</a> uses identity signals from existing providers and adds the mandate, approval and evidence layers on the bank's side.</p><div class='related'><b>Related guides</b><ul><li><a href='/learn/ai-agent-payment-mandate.html'>What a mandate for an AI agent should contain →</a></li><li><a href='/learn/why-banks-blocked-ai-agents.html'>Why US banks restricted AI agents in October 2026 →</a></li></ul></div><div class='src'><b>Sources</b><ol><li><a href="https://blog.finexer.com/newsroom/agentic-commerce-payments-2026/">Secondary report of HM Treasury's July 2026 AI adoption plan</a></li><li><a href="https://financialdataexchange.org/wp-content/uploads/2026/04/Exploration_Brief_Agentic_AI_Open_Finance_FDX.pdf">FDX, Agentic AI exploration brief (April 2026)</a></li></ol></div></article><aside><div class="box"><h4>See it working</h4><p>Watch an agent payment go from request to mandate check, passkey approval and evidence pack in a live demo.</p><a class="btn" href="/#product">How Assay works →</a></div></aside></div>
+</main>
+<footer><div class="wrap"><span>© 2026 Assay · Permission infrastructure for AI agent payments</span><span><a href="/">Home</a> · <a href="/learn/">Learn</a> · <a href="/llms.txt">llms.txt</a></span></div></footer>
+</body></html>

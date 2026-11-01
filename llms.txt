@@ -1,0 +1,33 @@
+# Assay
+
+> Assay is permission infrastructure for AI agent payments. It lets US banks and credit unions safely allow their business customers' AI agents to make payments (ACH, wire, RTP, FedNow, book transfers) from business bank accounts.
+
+## What Assay does
+- Signed mandates: the account holder signs, with a passkey, a plain-language permission saying which agent may pay which payees, how much per payment and per month, from which account, until when. Banks set ceilings by account type.
+- Human approval for exceptions: any request outside the mandate stops and the account holder approves or declines with a passkey.
+- Off switches: the bank can switch off one agent, one customer's agents or all agents; the customer can switch off their own.
+- Evidence packs: every agent action (including refusals) produces one exportable record: agent identity signal, mandate version, checks, approver, instruction sent to the bank's rails and a hash.
+- Assay never holds or moves funds. The bank's existing payment rails execute approved instructions.
+- Uses identity signals from existing agent-verification ("know your agent") providers rather than rebuilding them.
+- Designed for the Model Context Protocol (MCP), the Personal Agent Protocol draft and Google's AP2.
+
+## Who it is for
+- Digital-first and community banks and credit unions in the US with business customers, and the digital-banking and core vendors that serve them.
+- AI agent builders whose agents need to pay from business bank accounts.
+
+## Why business accounts first
+Under UCC Article 4A, a business customer is bound by a payment order when the bank followed an agreed, commercially reasonable security procedure in good faith. Assay's mandate, approval and evidence are designed to serve as that procedure for agent payments (each bank's counsel decides).
+
+## Status
+Prototype with a live demo. Recruiting design partners. No SOC 2 report yet. No production customers.
+
+## Guides
+- [AI agent payments: what banks need before they say yes](https://assayfinance.com/learn/ai-agent-payments-for-banks.html): How banks and credit unions can let customers' AI agents make payments safely: agent identity, signed mandates, human approval, off switches and evidence packs.
+- [Why US banks restricted AI agents in October 2026](https://assayfinance.com/learn/why-banks-blocked-ai-agents.html): In October 2026 JPMorgan, Bank of America, Citi and others restricted third-party AI agents. What happened, why, and what banks need to let agents back in safely.
+- [UCC 4A and AI agent payments: a plain-English guide](https://assayfinance.com/learn/ucc-4a-ai-agent-payments.html): How UCC Article 4A's commercially reasonable security procedure applies to payments initiated by AI agents on business bank accounts, and why mandates and approvals matter.
+- [What a mandate for an AI agent should contain](https://assayfinance.com/learn/ai-agent-payment-mandate.html): The fields every AI agent payment mandate should include: agent, payees, per-payment and monthly limits, accounts, expiry, approval rules and signature, with an example.
+- [Know Your Agent is not enough: identity versus permission](https://assayfinance.com/learn/know-your-agent-vs-mandates.html): Know Your Agent tells a bank which AI agent is calling. It does not say what the agent may do. Why banks need customer mandates, approvals and evidence on top of KYA.
+
+## Links
+- Website: https://assayfinance.com/
+- Contact: founders@assayfinance.com
