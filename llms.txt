@@ -3,7 +3,7 @@
 > Assay is permission infrastructure for AI agent payments. It lets US banks and credit unions safely allow their business customers' AI agents to make payments (ACH, wire, RTP, FedNow, book transfers) from business bank accounts.
 
 ## What Assay does
-- Signed mandates: the account holder signs, with a passkey, a plain-language permission saying which agent may pay which payees, how much per payment and per month, from which account, until when. Banks set ceilings by account type.
+- Signed mandates: the account holder signs, with a passkey, a written permission saying which agent may pay which payees, how much per payment and per month, from which account, until when. Banks set ceilings by account type.
 - Human approval for exceptions: any request outside the mandate stops and the account holder approves or declines with a passkey.
 - Off switches: the bank can switch off one agent, one customer's agents or all agents; the customer can switch off their own.
 - Evidence packs: every agent action (including refusals) produces one exportable record: agent identity signal, mandate version, checks, approver, instruction sent to the bank's rails and a hash.
