@@ -10,14 +10,23 @@
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="What a mandate for an AI agent should contain"><meta name="twitter:description" content="The fields every AI agent payment mandate should include: agent, payees, per-payment and monthly limits, accounts, expiry, approval rules and signature, with an example."><meta name="twitter:image" content="https://assayfinance.com/og-image.png">
 <meta property="article:published_time" content="2026-11-01">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600&family=Geist+Mono&display=swap"><style>
-:root{color-scheme:light;--canvas:#F3F3F1;--paper:#FBFBFA;--ink:#0D0E10;--ink-2:#3A3D42;--mute:#7A7E85;--hair:#E2E2DE;--signal:#FF5A1F;--sans:"Geist","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace}
+:root{color-scheme:light;--canvas:#F3F3F1;--paper:#FBFBFA;--ink:#0D0E10;--ink-2:#3A3D42;--mute:#7A7E85;--hair:#E2E2DE;--hair-2:#D3D3CE;--signal:#FF5A1F;--sans:"Geist","Helvetica Neue",Arial,sans-serif;--mono:"Geist Mono",ui-monospace,Menlo,monospace}
 *{box-sizing:border-box}body{margin:0;background:var(--canvas);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit}.wrap{max-width:1100px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.nav{position:sticky;top:0;z-index:5;background:rgba(243,243,241,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--hair)}
-.nav .wrap{display:flex;align-items:center;gap:24px;height:62px}.logo{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:1.05rem;letter-spacing:-.02em}.logo svg{width:34px;height:21px}
-.nav nav{display:flex;gap:22px;font-size:.9rem;color:var(--ink-2)}.nav nav a{text-decoration:none}.nav .btn{margin-left:auto}
-@media(max-width:700px){.nav nav{display:none}}
-.btn{display:inline-flex;align-items:center;height:40px;padding:0 16px;border-radius:8px;background:var(--ink);color:#fff;font-family:var(--mono);font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
+a{color:inherit}
+.wrap{max-width:1240px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+@media (min-width:860px){.wrap{padding-left:max(40px,env(safe-area-inset-left,0px));padding-right:max(40px,env(safe-area-inset-right,0px))}}
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(243,243,241,.82);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--hair)}
+.nav .wrap{display:flex;align-items:center;height:64px;gap:28px}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;font-weight:600;font-size:1.06rem;letter-spacing:-.02em;line-height:1.55}
+.logo svg{width:36px;height:22px;color:var(--ink)}
+.links{display:flex;gap:26px;font-size:.9rem;line-height:1.55;color:var(--ink-2)}
+.links a{text-decoration:none}.links a:hover,.links a[aria-current]{color:var(--ink)}
+.nav-cta{margin-left:auto;display:flex;gap:8px}
+@media (max-width:900px){.links{display:none}}
+@media (max-width:520px){.nav-cta .btn.line{display:none}}
+.btn{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:8px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .2s,color .2s,border-color .2s}
+.btn:hover{background:#26282C;border-color:#26282C}
+.btn.line{background:transparent;color:var(--ink);border-color:var(--hair-2)}.btn.line:hover{border-color:var(--ink)}
 .crumbs{font-family:var(--mono);font-size:.72rem;color:var(--mute);margin-top:48px;letter-spacing:.04em}.crumbs a{text-decoration:none}
 h1{font-weight:300;letter-spacing:-.035em;line-height:1.05;font-size:clamp(2.2rem,5vw,3.6rem);margin:18px 0 0;max-width:20ch;text-wrap:balance}h1 b{font-weight:600}
 .dek{font-size:1.18rem;color:var(--ink-2);max-width:62ch;margin-top:18px}
@@ -28,7 +37,7 @@ article p,article li{color:var(--ink-2)}article ul,article ol{padding-left:22px}
 .tldr{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:20px 22px;margin-top:4px}.tldr b{display:block;font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--signal);margin-bottom:6px;font-weight:400}
 table{border-collapse:collapse;width:100%;font-size:.94rem;margin:14px 0}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--hair);vertical-align:top}th{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mute);font-weight:400}
 .tbl{overflow-x:auto}
-aside .box{position:sticky;top:90px;background:#0C0D0F;color:#E6E8EA;border-radius:16px;padding:24px}aside h4{margin:0 0 8px;font-weight:500;font-size:1.15rem;letter-spacing:-.02em}aside p{color:#A9ADB3;font-size:.92rem;margin:0 0 16px}aside .btn{background:#fff;color:#000}
+aside .box{position:sticky;top:90px;background:#0C0D0F;color:#E6E8EA;border-radius:16px;padding:24px}aside h4{margin:0 0 8px;font-weight:500;font-size:1.15rem;letter-spacing:-.02em}aside p{color:#A9ADB3;font-size:.92rem;margin:0 0 16px}aside .btn{background:#fff;color:#000;border-color:#fff}aside .btn:hover{background:#E6E8EA}
 .related{margin-top:56px;border-top:1px solid var(--hair);padding-top:24px}.related ul{list-style:none;padding:0;display:grid;gap:10px}.related a{text-decoration:none;font-weight:500}.related a:hover{color:var(--signal)}
 .src{margin-top:40px;font-size:.84rem;color:var(--mute)}.src ol{padding-left:18px}.src a{color:var(--ink-2)}
 footer{margin-top:90px;border-top:1px solid var(--hair);padding-block:36px;font-size:.84rem;color:var(--mute)}footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}footer a{text-decoration:none}
@@ -38,7 +47,7 @@ dl.gl{margin-top:20px}dl.gl dt{font-weight:600;margin-top:18px}dl.gl dd{margin:4
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Assay", "item": "https://assayfinance.com/"}, {"@type": "ListItem", "position": 2, "name": "Learn", "item": "https://assayfinance.com/learn/"}, {"@type": "ListItem", "position": 3, "name": "What a mandate for an AI agent should contain", "item": "https://assayfinance.com/learn/ai-agent-payment-mandate.html"}]}, {"@type": "Article", "headline": "What a mandate for an AI agent should contain", "description": "The fields every AI agent payment mandate should include: agent, payees, per-payment and monthly limits, accounts, expiry, approval rules and signature, with an example.", "datePublished": "2026-11-01", "dateModified": "2026-11-01", "inLanguage": "en", "mainEntityOfPage": "https://assayfinance.com/learn/ai-agent-payment-mandate.html", "image": "https://assayfinance.com/og-image.png", "author": {"@type": "Organization", "name": "Assay", "url": "https://assayfinance.com/"}, "publisher": {"@type": "Organization", "name": "Assay", "url": "https://assayfinance.com/", "logo": {"@type": "ImageObject", "url": "https://assayfinance.com/icon-512.png"}}, "keywords": "AI agent mandate, agent payment mandate template, delegated payment authorization, AI agent spending limits, agent permissions banking, intent mandate"}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is an AI agent payment mandate?", "acceptedAnswer": {"@type": "Answer", "text": "A signed instruction from the account holder that defines which agent may pay which payees, how much per payment and per month, from which accounts, until when, and what happens on exceptions."}}]}]}</script>
 </head><body>
-<header class="nav"><div class="wrap"><a class="logo" href="/"><svg viewBox="15 80 415 245" aria-hidden="true"><path fill="#0D0E10" fill-rule="evenodd" d="M25 315 L232 102 Q241 91 255 90 L355 90 L355 229 Q355 239 345 239 L331 239 Q322 239 316 246 L250 315 Z M355 240 H420 V315 H355 Z"/></svg>Assay</a><nav aria-label="Main"><a href="/#product">Product</a><a href="/#compare">Compare</a><a href="/learn/">Learn</a><a href="/#why-now">Why now</a></nav><a class="btn" href="/#design-partners">Design partners</a></div></header>
+<header class="nav"><div class="wrap"><a class="logo" href="/"><svg viewBox="15 80 415 245" aria-hidden="true"><path fill="#0D0E10" fill-rule="evenodd" d="M25 315 L232 102 Q241 91 255 90 L355 90 L355 229 Q355 239 345 239 L331 239 Q322 239 316 246 L250 315 Z M355 240 H420 V315 H355 Z"/></svg>Assay</a><nav class="links" aria-label="Main"><a href="/#product">Product</a><a href="/#compare">Compare</a><a href="/#architecture">Architecture</a><a href="/#why-now">Why now</a><a href="/learn/" aria-current="page">Learn</a><a href="/#security">Security</a></nav><div class="nav-cta"><a class="btn line" href="/#design-partners">Design partners</a><a class="btn" href="mailto:founders@assayfinance.com?subject=Assay%20demo">Book demo</a></div></div></header>
 <main class="wrap">
 <div class="crumbs"><a href='/'>Assay</a> / <a href='/learn/'>Learn</a></div>
 <h1>What a mandate for an AI agent <b>should contain.</b></h1>
