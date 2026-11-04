@@ -535,40 +535,42 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
         <p>No new rails and no custody. Assay uses existing agent-identity signals, implements the agent protocols on your side and hands approved instructions to the systems you already run.</p>
       </div>
       <div class="flow rv">
-        <svg viewBox="0 0 1100 250" role="img" aria-label="Customer's AI agent connects to Assay, which checks identity, mandate and approval, then sends approved instructions to the bank's core and payment rails, and writes an evidence pack.">
+        <svg viewBox="0 0 1100 260" role="img" aria-label="Customer's AI agent connects to Assay, which checks identity, mandate and approval, then sends approved instructions to the bank's core and payment rails, and writes an evidence pack.">
           <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0D0E10"/></marker></defs>
-          <g font-family="Geist, sans-serif" font-size="15" fill="#0D0E10">
-            <rect x="10" y="85" width="170" height="80" rx="12" fill="#F3F3F1" stroke="#D3D3CE"/>
-            <text x="28" y="118" font-weight="500">Customer's AI agent</text>
-            <text x="28" y="142" class="m" font-size="11" fill="#7A7E85">MCP · PAP · AP2</text>
-            <rect x="250" y="15" width="170" height="60" rx="12" fill="#fff" stroke="#D3D3CE"/>
-            <text x="268" y="42" font-weight="500">Agent identity</text>
-            <text x="268" y="62" class="m" font-size="11" fill="#7A7E85">verification provider</text>
-            <rect x="460" y="55" width="260" height="140" rx="16" fill="#0C0D0F"/>
-            <text x="482" y="88" fill="#fff" font-weight="600" font-size="17">Assay</text>
-            <circle cx="698" cy="82" r="5" fill="#FF5A1F"/>
-            <text x="482" y="118" class="m" font-size="12" fill="#C9CCD0">① signed mandate</text>
-            <text x="482" y="142" class="m" font-size="12" fill="#C9CCD0">② human approval</text>
-            <text x="482" y="166" class="m" font-size="12" fill="#C9CCD0">③ evidence pack</text>
-            <rect x="790" y="85" width="140" height="80" rx="12" fill="#fff" stroke="#D3D3CE"/>
-            <text x="808" y="118" font-weight="500">Your core &amp;</text>
-            <text x="808" y="138" font-weight="500">digital banking</text>
-            <rect x="970" y="40" width="120" height="44" rx="10" fill="#fff" stroke="#D3D3CE"/><text x="990" y="67" class="m" font-size="12">ACH · Wire</text>
-            <rect x="970" y="104" width="120" height="44" rx="10" fill="#fff" stroke="#D3D3CE"/><text x="990" y="131" class="m" font-size="12">RTP · FedNow</text>
-            <rect x="970" y="168" width="120" height="44" rx="10" fill="#fff" stroke="#D3D3CE"/><text x="990" y="195" class="m" font-size="12">Book transfer</text>
-            <rect x="460" y="212" width="260" height="30" rx="8" fill="#FFF3EE" stroke="#FFC9B5"/><text x="478" y="232" class="m" font-size="11" fill="#B33C10">exportable to exams · audits · disputes</text>
+          <g font-family="Geist, sans-serif" font-size="15" fill="#0D0E10" text-anchor="middle">
+            <rect x="10" y="85" width="190" height="80" rx="12" fill="#F3F3F1" stroke="#D3D3CE"/>
+            <text x="105" y="119" font-weight="500">Customer's AI agent</text>
+            <text x="105" y="143" class="m" font-size="11" fill="#7A7E85">MCP · PAP · AP2</text>
+            <rect x="250" y="12" width="190" height="62" rx="12" fill="#fff" stroke="#D3D3CE"/>
+            <text x="345" y="39" font-weight="500">Agent identity</text>
+            <text x="345" y="60" class="m" font-size="11" fill="#7A7E85">verification provider</text>
+            <rect x="470" y="55" width="250" height="140" rx="16" fill="#0C0D0F"/>
+            <g text-anchor="start">
+            <text x="494" y="89" fill="#fff" font-weight="600" font-size="17">Assay</text>
+            <text x="494" y="119" class="m" font-size="12" fill="#C9CCD0">① signed mandate</text>
+            <text x="494" y="144" class="m" font-size="12" fill="#C9CCD0">② human approval</text>
+            <text x="494" y="169" class="m" font-size="12" fill="#C9CCD0">③ evidence pack</text>
+            </g>
+            <circle cx="698" cy="83" r="5" fill="#FF5A1F"/>
+            <rect x="780" y="85" width="150" height="80" rx="12" fill="#fff" stroke="#D3D3CE"/>
+            <text x="855" y="120" font-weight="500">Your core &amp;</text>
+            <text x="855" y="141" font-weight="500">digital banking</text>
+            <rect x="965" y="40" width="125" height="44" rx="10" fill="#fff" stroke="#D3D3CE"/><text x="1027.5" y="66.5" class="m" font-size="12">ACH · Wire</text>
+            <rect x="965" y="104" width="125" height="44" rx="10" fill="#fff" stroke="#D3D3CE"/><text x="1027.5" y="130.5" class="m" font-size="12">RTP · FedNow</text>
+            <rect x="965" y="168" width="125" height="44" rx="10" fill="#fff" stroke="#D3D3CE"/><text x="1027.5" y="194.5" class="m" font-size="12">Book transfer</text>
+            <rect x="430" y="214" width="330" height="34" rx="9" fill="#FFF3EE" stroke="#FFC9B5"/><text x="595" y="235.5" class="m" font-size="11" fill="#B33C10">exportable to exams · audits · disputes</text>
           </g>
           <g fill="none" stroke="#0D0E10" stroke-width="1.4">
-            <path class="dash" d="M180 125H458" marker-end="url(#ah)"/>
-            <path class="dash" d="M335 75V100Q335 112 347 112H458" marker-end="url(#ah)" stroke="#9A9EA5"/>
-            <path class="dash" d="M720 125H788" marker-end="url(#ah)"/>
-            <path class="dash" d="M930 115Q950 115 950 95V70Q950 62 958 62H968" marker-end="url(#ah)"/>
-            <path class="dash" d="M930 126H968" marker-end="url(#ah)"/>
-            <path class="dash" d="M930 136Q950 136 950 156V182Q950 190 958 190H968" marker-end="url(#ah)"/>
-            <path d="M590 195V210" stroke="#FF5A1F"/>
+            <path class="dash" d="M200 125H468" marker-end="url(#ah)"/>
+            <path class="dash" d="M345 74V100Q345 112 357 112H468" marker-end="url(#ah)" stroke="#9A9EA5"/>
+            <path class="dash" d="M720 125H778" marker-end="url(#ah)"/>
+            <path class="dash" d="M930 115Q947 115 947 95V70Q947 62 955 62H963" marker-end="url(#ah)"/>
+            <path class="dash" d="M930 126H963" marker-end="url(#ah)"/>
+            <path class="dash" d="M930 136Q947 136 947 156V182Q947 190 955 190H963" marker-end="url(#ah)"/>
+            <path d="M595 195V214" stroke="#FF5A1F"/>
           </g>
-          <circle r="4" fill="#FF5A1F"><animateMotion dur="3.2s" repeatCount="indefinite" path="M180 125H458"/></circle>
-          <circle r="4" fill="#FF5A1F"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M720 125H788 M930 126H968"/></circle>
+          <circle r="4" fill="#FF5A1F"><animateMotion dur="3.2s" repeatCount="indefinite" path="M200 125H468"/></circle>
+          <circle r="4" fill="#FF5A1F"><animateMotion dur="3.2s" begin="1.6s" repeatCount="indefinite" path="M720 125H778 M930 126H963"/></circle>
         </svg>
       </div>
       <div class="flow-cap rv">
