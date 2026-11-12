@@ -16,7 +16,7 @@
 - AI agent builders whose agents need to pay from business bank accounts.
 
 ## Why business accounts first
-Under UCC Article 4A, a business customer is bound by a payment order when the bank followed an agreed, commercially reasonable security procedure in good faith. Assay's mandate, approval and evidence are designed to serve as that procedure for agent payments (each bank's counsel decides).
+Under UCC Article 4A, a business customer can be held to a payment order if the bank proves it followed an agreed, commercially reasonable security procedure in good faith, within the customer's written limits. Assay's mandate, approval and evidence are built to be that proof. Whether a procedure is commercially reasonable is a question of law, decided by a court.
 
 ## Status
 Prototype with a live demo. Recruiting design partners. No SOC 2 report yet. No production customers.

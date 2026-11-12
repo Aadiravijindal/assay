@@ -35,7 +35,7 @@
   {"@type":"Question","name":"Does Assay hold or move money?","acceptedAnswer":{"@type":"Answer","text":"No. Assay decides whether an agent's request may proceed and records what happened. Approved instructions go to the bank's existing payment rails."}},
   {"@type":"Question","name":"Is Assay live?","acceptedAnswer":{"@type":"Answer","text":"Not yet. Assay is a prototype with a live demo, and is recruiting design partners before any pilot."}},
   {"@type":"Question","name":"Who sets the limits for an AI agent, the bank or the customer?","acceptedAnswer":{"@type":"Answer","text":"Both. The bank sets ceilings by account type. The customer signs a mandate within them. Neither can exceed what the other allows."}},
-  {"@type":"Question","name":"Why start with business accounts?","acceptedAnswer":{"@type":"Answer","text":"Business payments are governed by UCC Article 4A, which recognises agreed, commercially reasonable security procedures. Assay's mandate, approval and evidence are built to be that procedure for agent payments."}},
+  {"@type":"Question","name":"Why start with business accounts?","acceptedAnswer":{"@type":"Answer","text":"Reg E largely puts the loss on a consumer who shares their login. Under UCC 4A, a business customer can be held to a payment order if the bank proves it followed an agreed, commercially reasonable security procedure in good faith, within the customer's written limits. Assay's mandate, approval and evidence are built to be that proof. A court decides."}},
   {"@type":"Question","name":"Which agent protocols does Assay support?","acceptedAnswer":{"@type":"Answer","text":"Assay is designed for MCP, the Personal Agent Protocol draft and AP2, and uses identity signals from existing agent-verification providers."}}
  ]}
 ]}
@@ -394,7 +394,7 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
           <section class="detail">
             <div class="colh"><span>Decision</span><span id="rid">REQ-0417</span></div>
             <div class="who" id="dwho">payables-agent · via MCP</div>
-            <div class="big" id="damt">$2,340.00</div>
+            <div class="big" id="damt">$7,800.00</div>
             <div class="to" id="dto">ACH → Harbor Linen Supply</div>
             <ul class="checks" id="dchecks"></ul>
             <div class="appr" id="dappr"><span class="k"><svg aria-hidden="true"><use href="#fp"/></svg></span><div><span id="dapq">Owner approval</span><small id="daps">not needed yet</small></div><span class="st" id="dapc">idle</span></div>
@@ -417,7 +417,7 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
     <div class="wrap">
       <div class="sec-top rv">
         <div><div class="kicker"><i>01</i> · The problem</div><h2>Agents are at the door. Today's options <b>all fall short.</b></h2></div>
-        <p>Business owners want AI agents to pay suppliers, top up payroll and move cash. Today banks either let agents log in with the owner's password, block them, or allow read-only access that stops short of payments.</p>
+        <p>Business owners want AI agents to pay suppliers, top up payroll and move cash. Today banks either block agents, allow read-only access that stops short of payments, or let them in on the owner's password at the owner's risk.</p>
       </div>
       <div class="cards3">
         <div class="card rv"><span class="n">OPTION A</span><div class="glyph"><svg width="120" height="44" viewBox="0 0 120 44" aria-hidden="true"><rect x="1" y="8" width="58" height="28" rx="6" fill="none" stroke="#D3D3CE"/><circle cx="12.0" cy="22" r="1.7" fill="#7A7E85"/><circle cx="17.1" cy="22" r="1.7" fill="#7A7E85"/><circle cx="22.2" cy="22" r="1.7" fill="#7A7E85"/><circle cx="27.3" cy="22" r="1.7" fill="#7A7E85"/><circle cx="32.4" cy="22" r="1.7" fill="#7A7E85"/><circle cx="37.5" cy="22" r="1.7" fill="#7A7E85"/><circle cx="42.6" cy="22" r="1.7" fill="#7A7E85"/><circle cx="47.7" cy="22" r="1.7" fill="#7A7E85"/><path d="M66 22h22" stroke="#E5483A" stroke-width="1.5"/><circle cx="104" cy="22" r="13" fill="none" stroke="#E5483A"/><path d="M98 22h12M104 16v12" stroke="#E5483A" stroke-width="1.5"/></svg></div><h3>Shared passwords</h3><p>The agent can do anything the owner can. You can't tell them apart, and nothing records who decided what.</p></div>
@@ -443,10 +443,10 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
         </div>
         <div class="screen rv">
           <div class="pane on" id="p0" role="tabpanel" aria-labelledby="t0">
-            <div class="sc-h"><span>Mandate M-0193 · v2</span></div>
+            <div class="sc-h"><span>Mandate M-0193 · v1</span></div>
             <div class="mandate-doc">
-              <p class="q">My agent may pay <u>approved suppliers</u> up to <u>$2,000 each</u> and <u>$15,000 a month</u> from <u>Operating ••4821</u> until <u>31 Mar 2027</u>. Anything new or larger, ask me.</p>
-              <dl class="kv"><dt>agent</dt><dd>payables-agent</dd><dt>payees</dt><dd>approved_suppliers (14)</dd><dt>max_each</dt><dd>$2,000.00</dd><dt>max_month</dt><dd>$15,000.00</dd><dt>bank_ceiling</dt><dd>$25,000.00 / month · business tier</dd></dl>
+              <p class="q">My agent may pay <u>approved suppliers</u> up to <u>$5,000 each</u> and <u>$20,000 a month</u> from <u>Operating ••4821</u> until <u>31 Mar 2027</u>. Anything new or larger, ask me.</p>
+              <dl class="kv"><dt>agent</dt><dd>payables-agent</dd><dt>payees</dt><dd>approved_suppliers (3)</dd><dt>max_each</dt><dd>$5,000.00</dd><dt>max_month</dt><dd>$20,000.00</dd><dt>bank_ceiling</dt><dd>$25,000.00 / payment · business tier</dd></dl>
               <div class="sig"><i>✓</i>Signed J. Ortiz (owner) · passkey · 02 Oct 2026</div>
             </div>
           </div>
@@ -454,8 +454,8 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
             <div class="sc-h"><span>Approval request</span></div>
             <div class="phone">
               <div class="nt">Harbor &amp; Pine LLC · Assay</div>
-              <h4>Approve $2,340.00?</h4>
-              <p>payables-agent wants to pay Harbor Linen Supply. This is $340.00 over your per-payment limit.</p>
+              <h4>Approve $7,800.00?</h4>
+              <p>payables-agent wants to pay Harbor Linen Supply. This is $2,800.00 over your per-payment limit.</p>
               <div class="fid"><svg aria-hidden="true"><use href="#fp"/></svg></div>
               <div class="b2"><span>Decline</span><span>Approve</span></div>
             </div>
@@ -474,13 +474,13 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
             <div class="sc-h"><span>Evidence ev_7Q2M…K9</span></div>
             <dl class="kv" style="margin-top:0;font-size:.78rem;grid-template-columns:110px minmax(0,1fr)">
               <dt>agent</dt><dd>payables-agent · identity: verified · provider recorded</dd>
-              <dt>request</dt><dd>ACH $2,340.00 → Harbor Linen Supply · 14:02:11 ET</dd>
-              <dt>mandate</dt><dd>M-0193 v2 · signed J. Ortiz · passkey</dd>
+              <dt>request</dt><dd>ACH $7,800.00 → Harbor Linen Supply · 14:02:11 ET</dd>
+              <dt>mandate</dt><dd>M-0193 v1 · signed J. Ortiz · passkey</dd>
               <dt>checks</dt><dd>payee ✓ · per-payment limit ✕ · monthly cap ✓</dd>
               <dt>decision</dt><dd>approval_required</dd>
               <dt>approval</dt><dd>J. Ortiz · passkey · 14:02:38 ET</dd>
               <dt>execution</dt><dd>sent to bank ACH rail · Assay held no funds</dd>
-              <dt>hash</dt><dd>sha256 9f2c…e41a</dd>
+              <dt>hash</dt><dd>sha256 9f3c…e21a</dd>
             </dl>
             <div class="sig" style="color:var(--signal)"><i style="border-color:rgba(255,90,31,.6)">◆</i>Exportable for exams, audits and disputes</div>
           </div>
@@ -586,15 +586,15 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
     <div class="wrap">
       <div class="sec-top rv">
         <div><div class="kicker"><i>05</i> · Why now</div><h2>In October 2026 the biggest banks said <b>"not like this."</b></h2></div>
-        <p>Nobody has said how. The standards for agent access don't yet cover mandates, approvals, evidence or liability.</p>
+        <p>Then they made it the customer's problem. No agent standard yet says who carries the loss.</p>
       </div>
       <div class="tl">
-        <div class="ti rv"><span class="d">13 OCT 2026</span><h3>"Rogue agents"</h3><p>JPMorgan's CEO says the bank won't let just any outside agent in, per press reports.<sup><a href="#n1">1</a></sup></p></div>
-        <div class="ti rv"><span class="d">14 OCT 2026</span><h3>A person in the loop</h3><p>Bank of America's CEO says a person should approve money leaving an account.<sup><a href="#n1">1</a></sup></p></div>
-        <div class="ti rv"><span class="d">MID-OCT 2026</span><h3>Read-only</h3><p>Several of the largest US banks restrict outside agents to read-only access.<sup><a href="#n1">1</a></sup></p></div>
-        <div class="ti rv"><span class="d">STILL OPEN</span><h3>No standard</h3><p>The Personal Agent Protocol draft lists payments and signed approvals as open work.<sup><a href="#n4">4</a> <a href="#n5">5</a></sup></p></div>
+        <div class="ti rv"><span class="d">13 OCT 2026</span><h3>"Rogue agents"</h3><p>JPMorgan's CEO, on the earnings call: the bank won't let just any outside agent in.<sup><a href="#n1">1</a></sup></p></div>
+        <div class="ti rv"><span class="d">14–15 OCT 2026</span><h3>"Not on my watch"</h3><p>Bank of America's CEO wants a person to approve money out. PNC's says "not on my watch."<sup><a href="#n1">1</a></sup></p></div>
+        <div class="ti rv"><span class="d">16–22 OCT 2026</span><h3>Logins blocked</h3><p>Citi, Morgan Stanley and Schwab block outside agents from logging in or moving money.<sup><a href="#n1">1</a></sup></p></div>
+        <div class="ti rv"><span class="d">27 OCT–24 NOV</span><h3>At your own risk</h3><p>Wells Fargo treats an agent's orders as yours, unchecked. Chase puts the risk on you too.<sup><a href="#n2">2</a></sup></p></div>
       </div>
-      <div class="law rv"><span class="kicker">Why business accounts first</span><p>Under UCC 4A, a business customer is bound by a payment order when the bank followed an agreed, commercially reasonable security procedure in good faith. Assay's mandate, approval and evidence are built to be that procedure for agent payments. Your counsel decides.<sup><a href="#n3">3</a></sup></p></div>
+      <div class="law rv"><span class="kicker">Why business accounts first</span><p>Under UCC 4A, a business customer can be held to a payment order if the bank proves it followed an agreed, commercially reasonable security procedure in good faith, within the customer's written limits. Assay's mandate, approval and evidence are built to be that proof. A court decides.<sup><a href="#n3">3</a></sup></p></div>
     </div>
   </section>
 
@@ -609,7 +609,7 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
         <details><summary>Do we replace our agent-identity or fraud tools?</summary><p>No. Assay uses identity signals from existing agent-verification providers and sits alongside your fraud and payment controls.</p></details>
         <details><summary>Who sets the limits, the bank or the customer?</summary><p>Both. You set ceilings by account type. The customer signs a mandate within them. Neither can exceed what the other allows.</p></details>
         <details><summary>How fast is the off switch?</summary><p>Immediate for new requests. One agent, one customer's agents or all agents. Customers can switch off their own.</p></details>
-        <details><summary>What about consumer accounts?</summary><p>Not first. Consumer liability for agent payments under Reg E is less settled. We start where the rules are clearest.</p></details>
+        <details><summary>What about consumer accounts?</summary><p>Not first. Reg E largely puts the loss on a consumer who shares their login. UCC 4A gives business accounts a procedure a bank can prove.</p></details>
         <details><summary>How would we buy it?</summary><p>We expect to work with and through your digital-banking and core providers. If you're one of them, talk to us.</p></details>
         <details><summary>What does it cost?</summary><p>We'll set pricing with our design partners.</p></details>
       </div>
@@ -637,11 +637,9 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
       <div><h4>Company</h4><ul><li><a href="#product">Product</a></li><li><a href="#security" data-sheet="security">Security</a></li><li><a href="#design-partners" data-sheet="design-partners">Design partners</a></li><li><a href="#top" data-contact="demo">Contact</a></li><li><a href="https://www.linkedin.com/company/assayfinance/" target="_blank" rel="noopener">LinkedIn</a></li></ul></div>
       <div><h4>Guides</h4><ul><li><a href="/learn/ai-agent-payments-for-banks.html">AI agent payments for banks</a></li><li><a href="/learn/why-banks-blocked-ai-agents.html">Why banks blocked AI agents</a></li><li><a href="/learn/ucc-4a-ai-agent-payments.html">UCC 4A and AI agents</a></li><li><a href="/learn/ai-agent-payment-mandate.html">Agent payment mandates</a></li><li><a href="/learn/know-your-agent-vs-mandates.html">Know Your Agent vs mandates</a></li><li><a href="/learn/regulation-e-ai-agents.html">Regulation E and AI agents</a></li></ul></div>
       <div><h4>Notes</h4><ol>
-        <li id="n1">Press reports of October 2026 bank restrictions on third-party AI agents: <a href="https://fortune.com/2026/10/15/jamie-dimon-ai-agents-meta-muse-jpmorgan/" target="_blank" rel="noopener">Fortune, 15 Oct 2026</a>; <a href="https://www.retailbankerinternational.com/newsletters/us-banks-limit-ai-agents-access/" target="_blank" rel="noopener">Retail Banker International, 19 Oct 2026</a>.</li>
-        <li id="n2"><a href="https://www.fintechfutures.com/business-banking/grasshopper-partners-narmi-for-mcp-server-integration" target="_blank" rel="noopener">FinTech Futures</a>: read-only MCP access for business clients.</li>
-        <li id="n3"><a href="https://www.goodwinlaw.com/en/insights/publications/2026/06/insights-technology-aiml-authorizing-agentic-payments" target="_blank" rel="noopener">Goodwin, "Authorizing agentic payments" (June 2026)</a>. Not legal advice.</li>
-        <li id="n4"><a href="https://personalagentprotocol.org/docs/path-to-1" target="_blank" rel="noopener">Personal Agent Protocol, "Path to 1.0"</a>.</li>
-        <li id="n5"><a href="https://financialdataexchange.org/wp-content/uploads/2026/04/Exploration_Brief_Agentic_AI_Open_Finance_FDX.pdf" target="_blank" rel="noopener">FDX, Agentic AI exploration brief (April 2026)</a>.</li>
+        <li id="n1">October 2026 bank restrictions on third-party AI agents: <a href="https://fortune.com/2026/10/15/jamie-dimon-ai-agents-meta-muse-jpmorgan/" target="_blank" rel="noopener">Fortune, 15 Oct</a>; <a href="https://www.pymnts.com/?p=4316450" target="_blank" rel="noopener">PYMNTS, 15 Oct</a>; <a href="https://www.ibtimes.co.uk/us-banks-restrict-third-party-ai-agents-1827325" target="_blank" rel="noopener">IBTimes on the Axios report, 22 Oct</a>; <a href="https://www.americanbanker.com/news/banks-are-blocking-external-ai-agents-is-this-sustainable" target="_blank" rel="noopener">American Banker, 27 Oct</a>; <a href="https://www.hunton.com/insights/legal/major-banks-move-to-block-or-limit-customer-directed-ai-agents" target="_blank" rel="noopener">Hunton Andrews Kurth, 3 Nov 2026</a>.</li>
+        <li id="n2"><a href="https://www.wellsfargo.com/online-banking/online-access-agreement/upcoming/" target="_blank" rel="noopener">Wells Fargo Online Access Agreement</a>, §15 (effective 24 Nov 2026); <a href="https://static.chasecdn.com/content/dam/legal-agreements/library/en/dsa_la/versions/dsa_la.pdf" target="_blank" rel="noopener">Chase Digital Services Agreement</a>, §9.</li>
+        <li id="n3"><a href="https://www.law.cornell.edu/ucc/4A/4A-202" target="_blank" rel="noopener">UCC §4A-202 (Cornell LII)</a>; <a href="https://www.goodwinlaw.com/en/insights/publications/2026/06/insights-technology-aiml-authorizing-agentic-payments" target="_blank" rel="noopener">Goodwin, "Authorizing agentic payments" (June 2026)</a>. Not legal advice.</li>
       </ol></div>
     </div>
     <div class="disc"><span>Assay is a software company. It does not hold funds or provide banking services. Names, amounts and IDs shown are illustrative.</span><span><a href="/privacy.html">Privacy</a> · <a href="/terms.html">Terms</a> · © 2026 Assay</span></div>
@@ -662,12 +660,12 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
 </aside>
 <aside class="sheet" id="sheet-security" aria-label="Security and principles">
   <button class="btn line x" type="button" data-close>Close</button>
-  <div class="kicker"><i>→</i> Security · Oct 2026</div>
+  <div class="kicker"><i>→</i> Security</div>
   <h2>Security <b>and principles.</b></h2>
   <p class="sub">What Assay is designed to do, what it will never do, and what we don't have yet.</p>
   <div class="blk"><h3>Never</h3><ul><li>Hold, pool or move customer money.</li><li>Ask a customer to share their banking password with an agent.</li><li>Let an agent act outside a signed mandate without a human approval.</li></ul></div>
   <div class="blk"><h3>How decisions are made</h3><ul><li>Refused unless a signed mandate allows it or a person approves it.</li><li>Mandates are signed with a passkey and expire. Approvals use passkeys.</li><li>Your own limits and controls still apply.</li></ul></div>
-  <div class="blk"><h3>Evidence</h3><p>Per action: agent identity signal, mandate version, checks run, approver and time, the instruction sent to your rails, and a hash so the record can be checked later.</p></div>
+  <div class="blk"><h3>Evidence</h3><p>Per action: agent identity signal, mandate version, checks run, approver and time, the instruction sent to your rails, and a SHA-256 hash chained to the record before, so any edit shows.</p></div>
   <div class="blk"><h3>Standards</h3><p>Designed for MCP, the Personal Agent Protocol draft and AP2. Where they don't yet cover mandates, approvals or evidence, we intend to contribute rather than fork.</p></div>
   <div class="blk"><h3>Not yet</h3><p>No SOC 2 report or other certification. No production deployments. Data-handling details are covered in the demo and will be published here before any pilot.</p></div>
   <div class="row"><button class="btn lg" type="button" data-contact="demo">Book a demo</button><button class="btn lg line" type="button" data-contact="security">Report a concern</button></div>
@@ -703,11 +701,11 @@ footer h4{font-family:var(--mono);font-weight:400;font-size:.7rem;letter-spacing
 
   /* ---------- live console ---------- */
   var REQS=[
-    {id:"REQ-0417",ev:"ev_7Q2M",agent:"payables-agent",via:"MCP",amt:"$2,340.00",rail:"ACH",to:"Harbor Linen Supply",time:"14:02:11",
-     checks:[["Agent identity","provider signal","ok","verified"],["Payee on approved list","mandate M-0193 v2","ok","pass"],["Per-payment limit · $2,000.00","signed by J. Ortiz","wait","over limit"],["Monthly cap · $15,000.00","$6,210.00 used","ok","pass"]],
+    {id:"REQ-0417",ev:"ev_7Q2M",agent:"payables-agent",via:"MCP",amt:"$7,800.00",rail:"ACH",to:"Harbor Linen Supply",time:"14:02:11",
+     checks:[["Agent identity","provider signal","ok","verified"],["Payee on approved list","mandate M-0193 v1","ok","pass"],["Per-payment limit · $5,000.00","signed by J. Ortiz","wait","over limit"],["Monthly cap · $20,000.00","$6,210.00 used","ok","pass"]],
      outcome:"approval",final:["rec","recorded"]},
     {id:"REQ-0418",ev:"ev_7Q2P",agent:"payables-agent",via:"MCP",amt:"$860.00",rail:"ACH",to:"Coastline Packaging",time:"14:03:40",
-     checks:[["Agent identity","provider signal","ok","verified"],["Payee on approved list","mandate M-0193 v2","ok","pass"],["Per-payment limit · $2,000.00","signed by J. Ortiz","ok","pass"],["Monthly cap · $15,000.00","$8,550.00 used","ok","pass"]],
+     checks:[["Agent identity","provider signal","ok","verified"],["Payee on approved list","mandate M-0193 v1","ok","pass"],["Per-payment limit · $5,000.00","signed by J. Ortiz","ok","pass"],["Monthly cap · $20,000.00","$14,010.00 used","ok","pass"]],
      outcome:"within",final:["ok","within mandate"]},
     {id:"REQ-0419",ev:"ev_7Q2R",agent:"treasury-agent",via:"AP2",amt:"$18,500.00",rail:"Wire",to:"Dunmore Freight (new payee)",time:"14:05:02",
      checks:[["Agent identity","provider signal","ok","verified"],["Payee on approved list","mandate M-0201","no","new payee"],["Per-payment limit · $10,000.00","signed by J. Ortiz","wait","over limit"],["Monthly cap · $40,000.00","$12,000.00 used","ok","pass"]],
